@@ -1,0 +1,73 @@
+<!DOCTYPE html> <!-- 이 문서가 HTML5임을 선언 -->
+<html lang="ko"> <!-- 문서 언어가 한국어임을 지정 -->
+<head>
+  <meta charset="UTF-8"> <!-- 한글 등의 문자가 깨지지 않도록 UTF-8 인코딩 설정 -->
+  <title>심플 웹 에디터</title> <!-- 브라우저 탭 제목 -->
+
+  <style> /* 스타일(디자인) 지정 부분 시작 */
+    body {
+      font-family: Arial, sans-serif; /* 전체 글꼴 지정 */
+      margin: 30px; /* 바깥 여백 */
+    }
+
+    .toolbar {
+      margin-bottom: 10px; /* 툴바와 아래 요소 사이 여백 */
+    }
+
+    .toolbar button {
+      margin-right: 5px; /* 버튼끼리 오른쪽 여백 */
+      padding: 5px 10px; /* 버튼 안쪽 여백: 위아래 5px, 좌우 10px */
+    }
+
+    #editor {
+      border: 1px solid #ccc; /* 에디터 영역 테두리 */
+      padding: 10px; /* 에디터 안쪽 여백 */
+      min-height: 200px; /* 에디터 최소 높이 */
+      outline: none; /* 테두리(선택 시 파란선) 제거 */
+    }
+  </style> <!-- 스타일(디자인) 설정 끝 -->
+</head>
+<body>
+
+  <h2>심플 웹 에디터</h2> <!-- 페이지 제목(크게 보임) -->
+
+  <!-- 🛠️ 툴바: 편집 기능 버튼 모음 -->
+  <div class="toolbar">
+    <button onclick="execCmd('bold')"><b>굵게</b></button> <!-- 선택한 글씨 진하게 -->
+    <button onclick="execCmd('italic')"><i>기울임</i></button> <!-- 선택한 글씨 기울이기 -->
+    <button onclick="execCmd('underline')"><u>밑줄</u></button> <!-- 선택한 글씨 밑줄 -->
+    <button onclick="execCmd('insertOrderedList')">번호 목록</button> <!-- 1. 2. 3. 자동 번호 -->
+    <button onclick="execCmd('insertUnorderedList')">글머리 기호</button> <!-- ● ● ● 등 목록 -->
+    <button onclick="execCmd('createLink', prompt('링크 주소를 입력하세요:'))">링크</button> <!-- 선택 글씨에 하이퍼링크 추가 -->
+    <button onclick="execCmd('removeFormat')">서식 제거</button> <!-- 글씨에 준 효과(굵게 등) 초기화 -->
+  </div>
+
+  <!-- ✍️ 에디터 영역 - 직접 글을 입력하는 부분 -->
+  <div id="editor" contenteditable="true">
+    이곳에 내용을 입력하세요... <!-- 처음에 보일 안내 문장 -->
+  </div>
+
+  <!-- 📜 결과 확인(HTML 보기) 버튼과 결과 영역 -->
+  <div style="margin-top: 20px;"> <!-- 위와의 여백 20px -->
+    <button onclick="showResult()">HTML 보기</button> <!-- 버튼 눌러서 HTML 코드 보기 -->
+    <pre id="output" style="background: #f7f7f7; padding: 10px;"></pre> <!-- 결과 나오는 부분(코드처럼 보임) -->
+  </div>
+
+  <!-- 🧠 기능을 하는 자바스크립트 코드 --> <!--쉽게 생각해서 f12 눌렀을 때, 나오는 코드를 출력해준다고 보면 됨-->
+  <script>
+    // 편집(굵게 등) 기능 실행 함수
+    function execCmd(command, value = null) {
+      // execCommand 함수: contenteditable 내부의 선택영역에 편집 효과를 줌
+      document.execCommand(command, false, value);
+    }
+
+    // 결과 HTML 표시 함수
+    function showResult() {
+      // 에디터 영역의 HTML값을 가져옴
+      const html = document.getElementById("editor").innerHTML;
+      // 결과 출력 영역에 HTML코드를 그대로 문자로 넣어줌
+      document.getElementById("output").textContent = html;
+    }
+  </script>
+</body>
+</html>
