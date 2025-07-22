@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>주간 강의 시간표</title>
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #000; text-align: center; padding: 8px; }
+    th { background: #e0e0e0; }
+    .lunch { background: #ffe082; }
+  </style>
+</head>
+<body>
+  <h2>일주일 강의 시간표</h2>
+  <table>
+    <tr>
+      <th>시간</th>
+      <th>월</th>
+      <th>화</th>
+      <th>수</th>
+      <th>목</th>
+      <th>금</th>
+    </tr>
+    <tr>
+      <td>09:00-10:00</td>
+      <td rowspan="2">수학</td>
+      <td>영어</td>
+      <td rowspan="3">프로그래밍</td>
+      <td>경제</td>
+      <td rowspan="2">과학</td>
+    </tr>
+    <tr>
+      <td>10:00-11:00</td>
+      <td>한국사</td>
+      <td>문학</td>
+    </tr>
+    <tr>
+      <td>11:00-12:00</td>
+      <td>체육</td>
+      <td>수학</td>
+      <td>영어</td>
+      <td>음악</td>
+    </tr>
+    <tr>
+      <td>12:00-13:00</td>
+      <td class="lunch" colspan="5">점심시간</td>
+    </tr>
+    <tr>
+      <td>13:00-14:00</td>
+      <td>미술</td>
+      <td rowspan="2">화학</td>
+      <td>사회</td>
+      <td>수학</td>
+      <td rowspan="3">프로그래밍</td>
+    </tr>
+    <tr>
+      <td>14:00-15:00</td>
+      <td>영어</td>
+      <td rowspan="2">물리</td>
+      <td>체육</td>
+    </tr>
+    <tr>
+      <td>15:00-16:00</td>
+      <td>과학</td>
+      <td>영어</td>
+      <td>한국사</td>
+    </tr>
+  </table>
+</body>
+</html>
