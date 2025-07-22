@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>나의 여행 앨범</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    .gallery { display: flex; flex-wrap: wrap; gap: 12px; padding: 12px; justify-content: center; }
+    figure { max-width: 340px; margin: 0; }
+    img, audio { width: 100%;  }
+    figcaption { text-align: center; font-size: 0.96em; margin-top: 4px; }
+    @media (max-width: 500px) {
+      .gallery { flex-direction: column; align-items: center; }
+      figure { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>나의 여행 앨범</h1>
+  <audio autoplay loop controls>
+    <source src="file/nonesound.mp3" type="audio/mp3">
+    브라우저가 audio 태그를 지원하지 않습니다.
+  </audio>
+
+  <section class="gallery">
+    <figure>
+      <picture>
+        <img src="file/바다1.jpg" alt="바다 풍경 1">
+      </picture>
+      <figcaption>아름다운 바다의 첫 번째 풍경</figcaption>
+    </figure>
+    <figure>
+      <picture>
+        <img src="file/바다2.jpg" alt="바다 풍경 2">
+      </picture>
+      <figcaption>평화로운 해변의 두 번째 모습</figcaption>
+    </figure>
+  </section>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>홍길동 소개</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header>
+      <h1>홍길동 자기소개 페이지</h1>
+      <h2>나를 소개합니다</h2>
+    </header>
+    
+    <section>
+      <article>
+        <h2>기본 정보</h2>
+        <p>이름: 홍길동<br>
+           나이: 22세<br>
+           전공: 컴퓨터공학과<br>
+           취미: 사진 찍기, 음악 듣기
+        </p>
+
+        <h2>프로필 사진</h2>
+        <img src="hong_profile.jpg" alt="홍길동 사진" width="200">
+      </article>
+      
+      <article>
+        <h2>좋아하는 목록</h2>
+        <ul>
+          <li>여행</li>
+          <li>코딩</li>
+          <li>독서</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h2>학력 및 활동</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>기간</th>
+              <th>학력/활동</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2019~2022</td>
+              <td>서울고등학교 졸업</td>
+            </tr>
+            <tr>
+              <td>2022~</td>
+              <td>한국대학교 컴퓨터공학과 재학</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      
+      <article>
+        <h2>연락처 및 링크</h2>
+        <ul>
+          <li>이메일: honggildong@email.com</li>
+          <li>깃허브: <a href="https://github.com/honggildong" target="_blank">github.com/honggildong</a></li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>음악(선택)</h2>
+        <audio controls>
+          <source src="background.mp3" type="audio/mpeg">
+          브라우저가 오디오를 지원하지 않습니다.
+        </audio>
+      </article>
+      
+      <article>
+        <h2>자기 소개 영상(선택)</h2>
+        <video controls width="320" height="240">
+          <source src="intro.mp4" type="video/mp4">
+          브라우저가 비디오를 지원하지 않습니다.
+        </video>
+      </article>
+
+      <article>
+        <h2>방명록</h2>
+        <form>
+          <label for="name">이름:</label>
+          <input type="text" id="name" name="name">
+          <br>
+          <label for="message">메시지:</label>
+          <textarea id="message" name="message"></textarea>
+          <br>
+          <button type="submit">작성</button>
+        </form>
+      </article>
+    </section>
+    
+    <footer>
+      <p>&copy; 2025 홍길동. 모든 권리 보유.</p>
+    </footer>
+  </body>
+</html>
