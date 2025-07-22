@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 문서의 기본 설정 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 HTML 복습 - 완전한 학습 가이드</title>
+    <meta name="description" content="HTML 태그별 소개, 설명, 실습을 포함한 완전한 복습 웹페이지">
+    
+    <!-- 기본 스타일링 (최소화) -->
+    <style>
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            line-height: 1.6; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #fafafa;
+        }
+        .chapter { 
+            background: white; 
+            margin: 30px 0; 
+            padding: 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .tag-intro { 
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-left: 4px solid #007bff; 
+        }
+        .practice-code { 
+            background-color: #f4f4f4; 
+            border: 1px solid #ddd; 
+            padding: 20px; 
+            margin: 20px 0; 
+            border-radius: 5px; 
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            display: none;
+        }
+        .practice-code.active {
+            display: block;
+        }
+        .web-result {
+            background-color: #fff;
+            border: 2px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .toc { 
+            background: #e9ecef; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }
+        .nested-list {
+            margin-left: 20px;
+        }
+        dl { margin: 15px 0; }
+        dt { 
+            font-weight: bold; 
+            margin-top: 10px; 
+            color: #0066cc;
+        }
+        dd { 
+            margin-left: 20px; 
+            margin-bottom: 10px; 
+            border-left: 3px solid #e9ecef;
+            padding-left: 15px;
+        }
+        #codeSelector {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+        <h3>코딩할 때 들으면 기분이 좋아지는 음악</h3>
+
+    <!-- 상단 배경음악 -->
+    <audio autoplay loop controls> 
+        <source src="file/chill-lofi.mp3" type="audio/mpeg">
+        브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+
+    <!-- 페이지 헤더 -->
+    <header>
+        <h1>HTML 복습 - 완전한 학습 가이드</h1>
+        <p><strong>각 챕터별 개념 + 태그 설명 + 웹 화면 + 실습 코드 모음</strong>을 모두 담은 종합 복습 자료입니다.</p>
+        <hr>
+    </header>
+
+    <!-- 목차 (중첩 리스트 + 앵커 링크 활용) -->
+    <nav class="toc">
+        <h2>목차</h2>
+        <ol>
+            <li><a href="#chapter1">인터넷과 웹</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>웹 기술 요소</li>
+                </ul>
+            </li>
+            <li><a href="#chapter2">HTML 개요</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#chapter3">개발환경 구성</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>도구 소개</li>
+                </ul>
+            </li>
+            <li><a href="#chapter4">텍스트 및 콘텐츠 태그</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#chapter5">목록과 테이블 태그</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#chapter6">폼(사용자 입력) 태그</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#chapter7">미디어 태그</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#chapter8">시맨틱 태그</a>
+                <ul class="nested-list">
+                    <li>개념</li>
+                    <li>태그</li>
+                    <li>웹 화면</li>
+                </ul>
+            </li>
+            <li><a href="#practice-codes">실습 코드 모음</a>
+                <ul class="nested-list">
+                    <li>선택형 코드 뷰어</li>
+                    <li>전체 실습 파일</li>
+                </ul>
+            </li>
+        </ol>
+    </nav>
+
+    <main>
+        <!-- 1장: 인터넷과 웹 -->
+        <section id="chapter1" class="chapter">
+            <h2>1. 인터넷과 웹</h2>
+            
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <h4>인터넷과 웹의 차이점</h4>
+                <dl>
+                    <dt>인터넷</dt>
+                    <dd>전 세계를 연결하는 물리적 네트워크의 집합</dd>
+                    
+                    <dt>웹(WWW)</dt>
+                    <dd>인터넷에서 사용할 수 있는 서비스 중 하나</dd>
+                    
+                    <dt>프로토콜</dt>
+                    <dd>HTTP/HTTPS, TCP/IP, DNS 등 통신 규약</dd>
+                    
+                    <dt>클라이언트-서버 모델</dt>
+                    <dd>요청과 응답으로 이루어진 웹의 기본 구조</dd>
+                </dl>
+            </div>
+
+            <h3>2. 웹 기술 요소</h3>
+            <dl>
+                <dt>HTTP/HTTPS</dt>
+                <dd>웹 페이지 전송 프로토콜</dd>
+                
+                <dt>DNS</dt>
+                <dd>도메인 이름을 IP 주소로 변환하는 시스템</dd>
+                
+                <dt>URL</dt>
+                <dd>웹 리소스의 위치를 지정하는 주소 체계</dd>
+            </dl>
+        </section>
+
+        <!-- 2장: HTML 개요 -->
+        <section id="chapter2" class="chapter">
+            <h2>2. HTML 개요</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <h4>HTML (Hypertext Markup Language)</h4>
+                <p><strong>웹 페이지의 구조와 콘텐츠를 정의하는 마크업 언어</strong></p>
+                <dl>
+                    <dt>마크업 언어</dt>
+                    <dd>태그를 사용해 문서 구조를 정의하는 언어</dd>
+                    
+                    <dt>플랫폼 독립성</dt>
+                    <dd>모든 브라우저와 운영체제에서 동작</dd>
+                    
+                    <dt>시맨틱 구조</dt>
+                    <dd>의미있는 태그로 문서의 논리적 구조 표현</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;!DOCTYPE html&gt;</dt>
+                    <dd>HTML5 문서임을 선언하는 문서형 정의</dd>
+                    
+                    <dt>&lt;html&gt;</dt>
+                    <dd>HTML 문서의 루트 요소, 모든 요소를 포함</dd>
+                    
+                    <dt>&lt;head&gt;</dt>
+                    <dd>메타데이터 영역, 문서 정보와 스타일, 스크립트 포함</dd>
+                    
+                    <dt>&lt;body&gt;</dt>
+                    <dd>본문 영역, 사용자에게 실제로 표시될 콘텐츠</dd>
+                    
+                    <dt>&lt;meta&gt;</dt>
+                    <dd>문서의 메타데이터 정의 (문자셋, 뷰포트 등)</dd>
+                    
+                    <dt>&lt;title&gt;</dt>
+                    <dd>브라우저 탭에 표시되는 문서 제목</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/basictest.jpg" alt="Welcome SKALA 웹 화면" width="400">
+                <p><small>기본 HTML 구조로 만든 환영 페이지 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 3장: 개발환경 구성 -->
+        <section id="chapter3" class="chapter">
+            <h2>3. 개발환경 구성</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <h4>HTML 개발을 위한 필수 도구들</h4>
+                <dl>
+                    <dt>코드 에디터</dt>
+                    <dd>HTML, CSS, JavaScript 코드를 작성하는 도구</dd>
+                    
+                    <dt>웹 브라우저</dt>
+                    <dd>작성한 HTML 문서를 렌더링하여 확인하는 도구</dd>
+                    
+                    <dt>개발자 도구</dt>
+                    <dd>디버깅과 테스트를 위한 브라우저 내장 도구</dd>
+                </dl>
+            </div>
+
+            <h3>2. 도구 소개</h3>
+            <dl>
+                <dt>VS Code</dt>
+                <dd>마이크로소프트에서 개발한 무료 코드 에디터</dd>
+                
+                <dt>Live Server 확장</dt>
+                <dd>실시간 미리보기를 제공하는 VS Code 확장 프로그램</dd>
+                
+                <dt>Emmet</dt>
+                <dd>HTML 자동 완성 기능 (! + Tab으로 기본 구조 생성)</dd>
+                
+                <dt>IntelliSense</dt>
+                <dd>코드 자동 완성 및 오류 검출 기능</dd>
+            </dl>
+        </section>
+
+        <!-- 4장: 텍스트 및 콘텐츠 태그 -->
+        <section id="chapter4" class="chapter">
+            <h2>4. 텍스트 및 콘텐츠 태그</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <p>웹 페이지의 텍스트 내용을 구조화하고 의미를 부여하는 태그들</p>
+                <dl>
+                    <dt>제목 태그</dt>
+                    <dd>문서의 계층적 구조를 나타내는 h1~h6 태그</dd>
+                    
+                    <dt>문단 태그</dt>
+                    <dd>텍스트를 논리적 단위로 구분하는 p 태그</dd>
+                    
+                    <dt>하이퍼링크</dt>
+                    <dd>웹의 핵심인 링크 기능을 제공하는 a 태그</dd>
+                    
+                    <dt>텍스트 서식</dt>
+                    <dd>텍스트의 의미와 강조를 표현하는 다양한 태그들</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;h1&gt;~&lt;h6&gt;</dt>
+                    <dd>제목 태그, h1이 가장 크고 중요하며 h6이 가장 작음, SEO에 중요한 역할</dd>
+                    
+                    <dt>&lt;p&gt;</dt>
+                    <dd>문단 태그, 블록 요소로 자동 줄바꿈과 여백 제공</dd>
+                    
+                    <dt>&lt;br&gt;</dt>
+                    <dd>줄바꿈 태그, 강제 줄바꿈을 위한 빈 태그</dd>
+                    
+                    <dt>&lt;hr&gt;</dt>
+                    <dd>수평선 태그, 콘텐츠 구분을 위한 선 삽입</dd>
+                    
+                    <dt>&lt;a&gt;</dt>
+                    <dd>앵커(링크) 태그, href 속성으로 링크 대상 지정</dd>
+                    
+                    <dt>&lt;strong&gt;</dt>
+                    <dd>중요성 강조 태그, 의미적으로 중요한 내용 표시</dd>
+                    
+                    <dt>&lt;b&gt;</dt>
+                    <dd>굵은 글씨 태그, 단순한 시각적 효과</dd>
+                    
+                    <dt>&lt;i&gt;</dt>
+                    <dd>기울임 글씨 태그, 단순한 시각적 효과</dd>
+                    
+                    <dt>&lt;mark&gt;</dt>
+                    <dd>하이라이트 태그, 형광펜 효과로 내용 강조</dd>
+                    
+                    <dt>&lt;span&gt;</dt>
+                    <dd>인라인 구획 태그, 스타일링 목적으로 사용</dd>
+                    
+                    <dt>&lt;div&gt;</dt>
+                    <dd>블록 구획 태그, 레이아웃 구성과 그룹화에 사용</dd>
+                    
+                    <dt>contenteditable</dt>
+                    <dd>편집 가능 속성, 사용자가 직접 내용을 수정할 수 있게 함</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/실습_블록,인라인.jpg" alt="블록 vs 인라인 요소 결과 화면" width="400">
+                <p><small>DIV(블록 요소)와 SPAN(인라인 요소)의 배치 차이를 보여주는 화면</small></p>
+                
+                <img src="file/실습_심플웹에디터.jpg" alt="웹 에디터 결과 화면" width="400">
+                <p><small>contenteditable을 활용한 심플 웹 에디터 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 5장: 목록과 테이블 -->
+        <section id="chapter5" class="chapter">
+            <h2>5. 목록과 테이블 태그</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <p>정보를 구조화하여 표시하는 태그들</p>
+                <dl>
+                    <dt>순서 있는 목록</dt>
+                    <dd>항목들을 번호나 문자 순서대로 나열</dd>
+                    
+                    <dt>순서 없는 목록</dt>
+                    <dd>항목들을 불릿 포인트로 나열</dd>
+                    
+                    <dt>정의 목록</dt>
+                    <dd>용어와 설명의 쌍으로 구성된 목록</dd>
+                    
+                    <dt>테이블</dt>
+                    <dd>행과 열의 격자 형태로 데이터를 체계적으로 표시</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;ol&gt;</dt>
+                    <dd>순서 있는 목록, type 속성으로 번호 스타일 변경 가능 (1, A, a, I, i)</dd>
+                    
+                    <dt>&lt;ul&gt;</dt>
+                    <dd>순서 없는 목록, CSS로 불릿 스타일 변경 가능</dd>
+                    
+                    <dt>&lt;li&gt;</dt>
+                    <dd>목록 항목, ol이나 ul 내부에서 각 항목을 나타냄</dd>
+                    
+                    <dt>&lt;dl&gt;</dt>
+                    <dd>정의 목록, 용어와 설명의 쌍으로 구성</dd>
+                    
+                    <dt>&lt;dt&gt;</dt>
+                    <dd>정의 용어, 설명할 용어나 제목</dd>
+                    
+                    <dt>&lt;dd&gt;</dt>
+                    <dd>정의 설명, dt에 대한 상세 설명</dd>
+                    
+                    <dt>&lt;table&gt;</dt>
+                    <dd>테이블 컨테이너, 표 전체를 감싸는 최상위 태그</dd>
+                    
+                    <dt>&lt;thead&gt;</dt>
+                    <dd>테이블 헤더 그룹, 제목 행들을 묶음</dd>
+                    
+                    <dt>&lt;tbody&gt;</dt>
+                    <dd>테이블 본문 그룹, 데이터 행들을 묶음</dd>
+                    
+                    <dt>&lt;tr&gt;</dt>
+                    <dd>테이블 행, 표의 가로줄</dd>
+                    
+                    <dt>&lt;th&gt;</dt>
+                    <dd>헤더 셀, 굵은 글씨로 표시되는 제목 셀</dd>
+                    
+                    <dt>&lt;td&gt;</dt>
+                    <dd>데이터 셀, 일반적인 데이터가 들어가는 셀</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/실습_list.jpg" alt="목록 실습 결과 화면" width="400">
+                <p><small>순서 있는 목록, 순서 없는 목록, 정의 목록의 다양한 활용 결과</small></p>
+                
+                <img src="file/실습_timetable.jpg" alt="시간표 실습 결과 화면" width="400">
+                <p><small>테이블을 활용한 강의 시간표 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 6장: 폼(사용자 입력) 태그 -->
+        <section id="chapter6" class="chapter">
+            <h2>6. 폼(사용자 입력) 태그</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <p>사용자로부터 데이터를 입력받는 태그들</p>
+                <dl>
+                    <dt>폼 컨테이너</dt>
+                    <dd>사용자 입력 요소들을 묶어서 서버로 전송</dd>
+                    
+                    <dt>입력 필드</dt>
+                    <dd>다양한 타입의 데이터를 입력받는 요소</dd>
+                    
+                    <dt>선택 메뉴</dt>
+                    <dd>미리 정의된 옵션 중에서 선택할 수 있는 드롭다운</dd>
+                    
+                    <dt>버튼</dt>
+                    <dd>사용자 액션을 트리거하는 클릭 가능한 요소</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;form&gt;</dt>
+                    <dd>폼 컨테이너, action과 method 속성으로 데이터 전송 방식 설정</dd>
+                    
+                    <dt>&lt;input&gt;</dt>
+                    <dd>입력 필드, type 속성으로 다양한 입력 타입 지정 (text, email, password 등)</dd>
+                    
+                    <dt>&lt;select&gt;</dt>
+                    <dd>드롭다운 선택 메뉴, multiple 속성으로 다중 선택 가능</dd>
+                    
+                    <dt>&lt;option&gt;</dt>
+                    <dd>선택 항목, select 내부의 각 선택 가능한 항목</dd>
+                    
+                    <dt>&lt;button&gt;</dt>
+                    <dd>버튼 요소, type 속성으로 submit, button, reset 타입 설정</dd>
+                    
+                    <dt>&lt;label&gt;</dt>
+                    <dd>라벨 요소, for 속성으로 특정 input과 연결하여 접근성 향상</dd>
+                    
+                    <dt>&lt;textarea&gt;</dt>
+                    <dd>여러 줄 텍스트 입력 영역, rows와 cols 속성으로 크기 조절</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/실습_select.jpg" alt="선택 메뉴 실습 결과 화면" width="400">
+                <p><small>드롭다운 선택 메뉴와 버튼 인터랙션을 보여주는 화면</small></p>
+                
+                <img src="file/실습_profile.jpg" alt="프로필 폼 실습 결과 화면" width="400">
+                <p><small>개인 프로필 페이지와 방명록 폼이 포함된 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 7장: 미디어 태그 -->
+        <section id="chapter7" class="chapter">
+            <h2>7. 미디어 태그</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <p>웹 페이지에 이미지, 오디오, 비디오 등 미디어 콘텐츠를 삽입하는 태그들</p>
+                <dl>
+                    <dt>이미지</dt>
+                    <dd>정적 시각 콘텐츠를 표시하는 기본 미디어</dd>
+                    
+                    <dt>오디오</dt>
+                    <dd>음성, 음악 등 소리 콘텐츠 재생</dd>
+                    
+                    <dt>비디오</dt>
+                    <dd>동영상 콘텐츠 재생과 컨트롤</dd>
+                    
+                    <dt>반응형 미디어</dt>
+                    <dd>화면 크기와 해상도에 따른 적응형 미디어</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;img&gt;</dt>
+                    <dd>이미지 삽입, src(소스), alt(대체텍스트), width, height 속성 사용</dd>
+                    
+                    <dt>&lt;audio&gt;</dt>
+                    <dd>오디오 재생, controls, autoplay, loop 속성으로 재생 옵션 설정</dd>
+                    
+                    <dt>&lt;video&gt;</dt>
+                    <dd>비디오 재생, controls, poster(썸네일) 속성 등 사용</dd>
+                    
+                    <dt>&lt;source&gt;</dt>
+                    <dd>미디어 소스 지정, 여러 형식 파일을 브라우저 호환성에 따라 선택</dd>
+                    
+                    <dt>&lt;picture&gt;</dt>
+                    <dd>반응형 이미지 컨테이너, 미디어 쿼리와 함께 사용</dd>
+                    
+                    <dt>&lt;figure&gt;</dt>
+                    <dd>독립적인 콘텐츠 블록, 이미지와 캡션을 함께 묶음</dd>
+                    
+                    <dt>&lt;figcaption&gt;</dt>
+                    <dd>figure의 캡션, 미디어에 대한 설명 텍스트</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/실습_여행앨범.jpg" alt="여행 앨범 실습 결과 화면" width="400">
+                <p><small>오디오 컨트롤, 이미지, 캡션이 포함된 여행 앨범 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 8장: 시맨틱 태그 -->
+        <section id="chapter8" class="chapter">
+            <h2>8. 시맨틱 태그</h2>
+
+            <h3>1. 개념</h3>
+            <div class="tag-intro">
+                <p><strong>의미가 있는 태그</strong>로, 문서의 구조와 콘텐츠의 의미를 명확하게 정의</p>
+                <dl>
+                    <dt>SEO 최적화</dt>
+                    <dd>검색 엔진이 콘텐츠를 더 잘 이해할 수 있도록 도움</dd>
+                    
+                    <dt>접근성 향상</dt>
+                    <dd>스크린 리더 등 보조 기술의 문서 해석 능력 향상</dd>
+                    
+                    <dt>코드 가독성</dt>
+                    <dd>개발자가 HTML 구조를 더 쉽게 이해할 수 있음</dd>
+                    
+                    <dt>유지보수 용이성</dt>
+                    <dd>명확한 의미 구조로 코드 수정과 관리가 용이</dd>
+                </dl>
+            </div>
+
+            <h3>2. 태그</h3>
+            <div class="tag-intro">
+                <dl>
+                    <dt>&lt;header&gt;</dt>
+                    <dd>헤더 영역, 문서나 섹션의 머리글, 제목과 내비게이션 포함</dd>
+                    
+                    <dt>&lt;nav&gt;</dt>
+                    <dd>네비게이션 영역, 메뉴와 링크 모음</dd>
+                    
+                    <dt>&lt;main&gt;</dt>
+                    <dd>주요 콘텐츠 영역, 문서의 핵심 내용 (페이지당 하나만 사용)</dd>
+                    
+                    <dt>&lt;section&gt;</dt>
+                    <dd>섹션 구분, 주제별로 콘텐츠를 그룹화</dd>
+                    
+                    <dt>&lt;article&gt;</dt>
+                    <dd>독립적 콘텐츠, 뉴스 기사, 블로그 포스트 등 완전한 내용</dd>
+                    
+                    <dt>&lt;aside&gt;</dt>
+                    <dd>보조 콘텐츠, 사이드바, 광고, 관련 링크 등</dd>
+                    
+                    <dt>&lt;footer&gt;</dt>
+                    <dd>푸터 영역, 저작권 정보, 연락처, 추가 정보</dd>
+                    
+                    <dt>&lt;time&gt;</dt>
+                    <dd>시간 정보, datetime 속성으로 기계 판독 가능한 시간 표시</dd>
+                    
+                    <dt>&lt;address&gt;</dt>
+                    <dd>연락처 정보, 문서 작성자나 소유자의 연락처</dd>
+                </dl>
+            </div>
+
+            <h3>3. 웹 화면</h3>
+            <div class="web-result">
+                <img src="file/실습_todaynews.jpg" alt="뉴스 페이지 실습 결과 화면" width="400">
+                <p><small>article과 section을 활용한 뉴스 페이지 화면</small></p>
+            </div>
+        </section>
+
+        <!-- 실습 코드 모음 섹션 -->
+        <section id="practice-codes" class="chapter">
+            <h2>9. 실습 코드 모음</h2>
+
+            <h3>선택형 코드 뷰어</h3>
+            <p>아래 드롭다운에서 확인하고 싶은 실습 코드를 선택하세요:</p>
+            
+            <select id="codeSelector" onchange="showCode()">
+                <option value="">-- 실습 코드를 선택하세요 --</option>
+                <option value="block-inline">실습_블록,인라인 </option>
+                <option value="web-editor">실습_심플웹에디터 </option>
+                <option value="list">실습_list </option>
+                <option value="timetable">실습_timetable </option>
+                <option value="select">실습_select</option>
+                <option value="profile">실습_profile</option>
+                <option value="travel-album">실습_여행앨범</option>
+                <option value="news">실습_todaynews</option>
+            </select>
+
+            <!-- 블록 vs 인라인 요소 코드 -->
+            <div id="block-inline" class="practice-code">
+                <h4>silseub_beulrog-inrain.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;블록 vs 인라인 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;블록 요소 (DIV) - 세로로 배치&lt;/h2&gt;
+    &lt;div style="background-color: #ffcccc; padding: 10px;"&gt;1번 DIV 영역&lt;/div&gt;
+    &lt;div style="background-color: #ccffcc; padding: 10px;"&gt;2번 DIV 영역&lt;/div&gt;
+    &lt;div style="background-color: #ccccff; padding: 10px;"&gt;3번 DIV 영역&lt;/div&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;인라인 요소 (SPAN) - 가로로 배치&lt;/h2&gt;
+    &lt;span style="background-color: #ffcccc; padding: 5px;"&gt;1번 SPAN 영역&lt;/span&gt;
+    &lt;span style="background-color: #ccffcc; padding: 5px;"&gt;2번 SPAN 영역&lt;/span&gt;
+    &lt;span style="background-color: #ccccff; padding: 5px;"&gt;3번 SPAN 영역&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 웹 에디터 코드 -->
+            <div id="web-editor" class="practice-code">
+                <h4>silseub_simpeulwebediteo.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;심플 웹 에디터&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;심플 웹 에디터&lt;/h1&gt;
+    
+    &lt;div&gt;
+        &lt;button onclick="formatText('bold')"&gt;굵게&lt;/button&gt;
+        &lt;button onclick="formatText('italic')"&gt;기울임&lt;/button&gt;
+        &lt;button onclick="formatText('underline')"&gt;밑줄&lt;/button&gt;
+        &lt;button onclick="formatText('foreColor', 'red')"&gt;글자색 빨강&lt;/button&gt;
+        &lt;button onclick="formatText('foreColor', 'blue')"&gt;글자색 파랑&lt;/button&gt;
+        &lt;button onclick="formatText('backColor', 'yellow')"&gt;배경 노랑&lt;/button&gt;
+        &lt;button onclick="formatText('removeFormat')"&gt;포맷 제거&lt;/button&gt;
+        &lt;button onclick="saveContent()"&gt;저장&lt;/button&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="editor" contenteditable="true" 
+         style="border: 1px solid #ccc; min-height: 200px; padding: 10px; margin: 10px 0;"&gt;
+        여기에 내용을 입력하세요...
+    &lt;/div&gt;
+    
+    &lt;h3&gt;저장된 HTML 코드&lt;/h3&gt;
+    &lt;pre id="htmlOutput"&gt;&lt;/pre&gt;
+    
+    &lt;script&gt;
+        function formatText(command, value) {
+            document.execCommand(command, false, value);
+        }
+        
+        function saveContent() {
+            const editor = document.getElementById('editor');
+            const output = document.getElementById('htmlOutput');
+            output.textContent = editor.innerHTML;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 선호도 목록 코드 -->
+            <div id="list" class="practice-code">
+                <h4>silseub_list.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;나의 선호도 목록&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;나의 선호도&lt;/h1&gt;
+    
+    &lt;h2&gt;내가 좋아하는 음식 (순서 없음)&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;피자&lt;/li&gt;
+        &lt;li&gt;치킨&lt;/li&gt;
+        &lt;li&gt;햄버거&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;올해 할 일&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;SKALA 과정 완주&lt;/li&gt;
+        &lt;li&gt;공모전 참가&lt;/li&gt;
+        &lt;li&gt;공모전1 (추가 도전)&lt;/li&gt;
+        &lt;li&gt;공모전2 (연속 도전)&lt;/li&gt;
+        &lt;li&gt;여행가기&lt;/li&gt;
+    &lt;/ol&gt;
+    
+    &lt;h2&gt;나를 설명하는 단어들&lt;/h2&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;전공&lt;/dt&gt;
+        &lt;dd&gt;공대 - 산업공학과&lt;/dd&gt;
+        
+        &lt;dt&gt;거주지&lt;/dt&gt;
+        &lt;dd&gt;서울 거주&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 시간표 코드 -->
+            <div id="timetable" class="practice-code">
+                <h4>silseub_timetable.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;일주일 강의 시간표&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;일주일 강의 시간표&lt;/h1&gt;
+    
+    &lt;table border="1"&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;시간&lt;/th&gt;
+                &lt;th&gt;월&lt;/th&gt;
+                &lt;th&gt;화&lt;/th&gt;
+                &lt;th&gt;수&lt;/th&gt;
+                &lt;th&gt;목&lt;/th&gt;
+                &lt;th&gt;금&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;09:00-10:00&lt;/td&gt;
+                &lt;td&gt;수학&lt;/td&gt;
+                &lt;td&gt;영어&lt;/td&gt;
+                &lt;td&gt;프로그래밍&lt;/td&gt;
+                &lt;td&gt;경제&lt;/td&gt;
+                &lt;td&gt;과학&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;10:00-11:00&lt;/td&gt;
+                &lt;td&gt;한국사&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;문학&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;11:00-12:00&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td&gt;체육&lt;/td&gt;
+                &lt;td&gt;수학&lt;/td&gt;
+                &lt;td&gt;영어&lt;/td&gt;
+                &lt;td&gt;음악&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;12:00-13:00&lt;/td&gt;
+                &lt;td colspan="5" style="text-align: center;"&gt;점심시간&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;13:00-14:00&lt;/td&gt;
+                &lt;td&gt;미술&lt;/td&gt;
+                &lt;td&gt;화학&lt;/td&gt;
+                &lt;td&gt;사회&lt;/td&gt;
+                &lt;td&gt;수학&lt;/td&gt;
+                &lt;td&gt;프로그래밍&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 선택 메뉴 코드 -->
+            <div id="select" class="practice-code">
+                <h4>silseub_select.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;선택 메뉴 실습&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;좋아하는 과일 선택&lt;/h1&gt;
+    
+    &lt;label for="fruit"&gt;좋아하는 과일을 선택하세요:&lt;/label&gt;
+    &lt;select id="fruit" name="fruit"&gt;
+        &lt;option value=""&gt;-- 선택하세요 --&lt;/option&gt;
+        &lt;option value="apple"&gt;사과&lt;/option&gt;
+        &lt;option value="banana"&gt;바나나&lt;/option&gt;
+        &lt;option value="grape"&gt;포도&lt;/option&gt;
+        &lt;option value="strawberry"&gt;딸기&lt;/option&gt;
+        &lt;option value="orange"&gt;오렌지&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;button onclick="showSelection()"&gt;선택 확인&lt;/button&gt;
+    
+    &lt;p id="result"&gt;&lt;/p&gt;
+    
+    &lt;script&gt;
+        function showSelection() {
+            const select = document.getElementById('fruit');
+            const result = document.getElementById('result');
+            const selectedValue = select.value;
+            const selectedText = select.options[select.selectedIndex].text;
+            
+            if (selectedValue) {
+                result.textContent = `선택하신 과일: ${selectedText}`;
+            } else {
+                result.textContent = '과일을 선택해주세요!';
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 프로필 코드 -->
+            <div id="profile" class="practice-code">
+                <h4>silseub_profile.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;개인 프로필&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;개인 프로필&lt;/h1&gt;
+    
+    &lt;h2&gt;기본 정보&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;이름:&lt;/strong&gt; 홍길동&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;나이:&lt;/strong&gt; 22세&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;전공:&lt;/strong&gt; 컴퓨터공학과&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;취미:&lt;/strong&gt; 사진 찍기, 음악 듣기&lt;/p&gt;
+    
+    &lt;h3&gt;프로필 사진&lt;/h3&gt;
+    &lt;img src="profile.jpg" alt="프로필 사진" width="150"&gt;
+    
+    &lt;h3&gt;좋아하는 목록&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;여행&lt;/li&gt;
+        &lt;li&gt;코딩&lt;/li&gt;
+        &lt;li&gt;독서&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;학력 및 활동&lt;/h2&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;기간&lt;/th&gt;
+            &lt;th&gt;학력/활동&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2019~2022&lt;/td&gt;
+            &lt;td&gt;서울고등학교 졸업&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;2022~&lt;/td&gt;
+            &lt;td&gt;한국대학교 컴퓨터공학과 재학&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    
+    &lt;h2&gt;연락처 및 링크&lt;/h2&gt;
+    &lt;p&gt;&lt;strong&gt;이메일:&lt;/strong&gt; 
+        &lt;a href="mailto:honggildong@email.com"&gt;honggildong@email.com&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;깃허브:&lt;/strong&gt; 
+        &lt;a href="https://github.com/honggildong" target="_blank"&gt;github.com/honggildong&lt;/a&gt;
+    &lt;/p&gt;
+    
+    &lt;h3&gt;음악(선택)&lt;/h3&gt;
+    &lt;audio controls&gt;
+        &lt;source src="favorite-song.mp3" type="audio/mpeg"&gt;
+        브라우저가 오디오를 지원하지 않습니다.
+    &lt;/audio&gt;
+    
+    &lt;h3&gt;자기 소개 영상(선택)&lt;/h3&gt;
+    &lt;video width="320" height="240" controls&gt;
+        &lt;source src="intro-video.mp4" type="video/mp4"&gt;
+        브라우저가 비디오를 지원하지 않습니다.
+    &lt;/video&gt;
+    
+    &lt;h2&gt;방명록&lt;/h2&gt;
+    &lt;form&gt;
+        &lt;label for="name"&gt;이름:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;label for="message"&gt;메시지:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="message" name="message" rows="4" cols="50"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;button type="submit"&gt;작성&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 여행 앨범 코드 -->
+            <div id="travel-album" class="practice-code">
+                <h4>silseub_yeohaengaelbeom.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;나의 여행 앨범&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;나의 여행 앨범&lt;/h1&gt;
+    
+    &lt;h2&gt;배경 음악&lt;/h2&gt;
+    &lt;audio controls&gt;
+        &lt;source src="travel-bgm.mp3" type="audio/mpeg"&gt;
+        브라우저가 audio 태그를 지원하지 않습니다.
+    &lt;/audio&gt;
+    
+    &lt;h2&gt;여행 사진들&lt;/h2&gt;
+    
+    &lt;figure&gt;
+        &lt;picture&gt;
+            &lt;source media="(max-width: 600px)" srcset="familia-small.jpg"&gt;
+            &lt;source media="(min-width: 601px)" srcset="familia-large.jpg"&gt;
+            &lt;img src="familia.jpg" alt="파밀리아 대성당" width="400"&gt;
+        &lt;/picture&gt;
+        &lt;figcaption&gt;바르셀로나 파밀리아 대성당&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="rome.jpg" alt="로마 콜로세움" width="400"&gt;
+        &lt;figcaption&gt;로마 콜로세움&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;figure&gt;
+        &lt;img src="opera.jpg" alt="오페라 하우스" width="400"&gt;
+        &lt;figcaption&gt;시드니 오페라 하우스&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;h2&gt;여행 영상&lt;/h2&gt;
+    &lt;video width="400" height="300" controls&gt;
+        &lt;source src="travel-video.mp4" type="video/mp4"&gt;
+        브라우저가 비디오를 지원하지 않습니다.
+    &lt;/video&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 시맨틱 블로그 코드 -->
+            <div id="semantic-blog" class="practice-code">
+                <h4>yesi_simaentigkodeu.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;시맨틱 태그 예시&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;나의 블로그&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#home"&gt;홈&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#about"&gt;소개&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#posts"&gt;글 목록&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#contact"&gt;문의하기&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section id="posts"&gt;
+            &lt;h2&gt;최근 글&lt;/h2&gt;
+            
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h3&gt;첫 번째 글 제목&lt;/h3&gt;
+                    &lt;time datetime="2025-07-22"&gt;2025년 7월 22일&lt;/time&gt;
+                &lt;/header&gt;
+                &lt;p&gt;이곳은 첫 번째 글의 내용입니다. 시맨틱 태그를 활용하여 구성하였습니다.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h3&gt;두 번째 글 제목&lt;/h3&gt;
+                    &lt;time datetime="2025-07-21"&gt;2025년 7월 21일&lt;/time&gt;
+                &lt;/header&gt;
+                &lt;p&gt;이곳은 두 번째 글의 내용입니다. HTML5는 시각적인 구조보다 의미를 중요시합니다.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;aside&gt;
+        &lt;h2&gt;사이드바&lt;/h2&gt;
+        &lt;section&gt;
+            &lt;h3&gt;카테고리&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;HTML&lt;/li&gt;
+                &lt;li&gt;CSS&lt;/li&gt;
+                &lt;li&gt;JavaScript&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h3&gt;태그&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;웹개발&lt;/li&gt;
+                &lt;li&gt;프론트엔드&lt;/li&gt;
+                &lt;li&gt;학습&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;/aside&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 나의 블로그. All rights reserved.&lt;/p&gt;
+        &lt;address&gt;
+            문의: &lt;a href="mailto:contact@myblog.com"&gt;contact@myblog.com&lt;/a&gt;
+        &lt;/address&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <!-- 뉴스 코드 -->
+            <div id="news" class="practice-code">
+                <h4>silseub_todaynews.html</h4>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;오늘의 뉴스&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;오늘의 주요 뉴스&lt;/h1&gt;
+        &lt;time datetime="2025-07-22"&gt;2025년 7월 22일&lt;/time&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h2&gt;독감 유행&lt;/h2&gt;
+                &lt;/header&gt;
+                &lt;p&gt;전국적으로 독감 환자가 급증하고 있습니다. 보건 당국은 예방접종과 개인 위생 관리의 중요성을 강조하며, 특히 어린이와 노약자의 철저한 주의를 당부했습니다.&lt;/p&gt;
+                &lt;p&gt;전국적으로 독감 환자가 급증하고 있습니다. 보건 당국은 예방접종과 개인 위생 관리의 중요성을 강조하며, 특히 어린이와 노약자의 철저한 주의를 당부했습니다.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h2&gt;IT 주식 상승세&lt;/h2&gt;
+                &lt;/header&gt;
+                &lt;p&gt;오늘 국내 증시는 글로벌 시장의 호조에 힘입어 상승 마감했습니다. 특히 IT 및 바이오 주가 눈에 띄는 강세를 보이며 투자자들의 관심이 집중되고 있습니다.&lt;/p&gt;
+            &lt;/article&gt;
+            
+            &lt;article&gt;
+                &lt;header&gt;
+                    &lt;h2&gt;프로 축구 경기 하이라이트&lt;/h2&gt;
+                &lt;/header&gt;
+                &lt;p&gt;어제 열린 프로 축구 경기에서 양팀 모두 수준 높은 플레이를 선보이며 팬들의 큰 박수 갈채를 받았습니다. 주요 득점 장면은 하이라이트 영상으로 다시 볼 수 있습니다.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;&lt;small&gt;&copy; 2025 뉴스 사이트. 모든 권리 보유.&lt;/small&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+            
+        </section>
+
+        <!-- 마무리 섹션 -->
+        <section class="chapter">
+            <h2>복습 완료</h2>
+            
+        </section>
+    </main>
+
+    <!-- 페이지 푸터 -->
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; background-color: #f8f9fa;">
+        <p><small>2025 HTML 복습 가이드 | Made with HTML by SKALA 수강생</small></p>
+        <p><a href="#chapter1">맨 위로 이동</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 코드 선택 함수
+        function showCode() {
+            // 모든 코드 블록 숨기기
+            const codeBlocks = document.querySelectorAll('.practice-code');
+            codeBlocks.forEach(block => block.classList.remove('active'));
+            
+            // 선택된 코드 블록만 표시
+            const selector = document.getElementById('codeSelector');
+            const selectedValue = selector.value;
+            
+            if (selectedValue) {
+                const selectedBlock = document.getElementById(selectedValue);
+                if (selectedBlock) {
+                    selectedBlock.classList.add('active');
+                }
+            }
+        }
+
+        // 페이지 로드 시 환영 메시지
+        window.onload = function() {
+            console.log('HTML 복습 페이지에 오신 것을 환영합니다!');
+            console.log('실습 코드 모음에서 다양한 예제를 확인해보세요!');
+        };
+
+        
+    </script>
+</body>
+</html>
