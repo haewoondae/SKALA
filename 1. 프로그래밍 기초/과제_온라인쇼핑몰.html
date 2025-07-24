@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="과제_쇼핑몰.css">
+</head>
+
+<header>
+    <div class="header-container">
+        <h1>온라인 쇼핑몰</h1>
+    </div>
+</header>
+
+
+<body>
+    <div class="body-container">
+    <!-- 위 코드를 반영한 HTML 페이지 내 상품재고, 회원등급, 최초주문금액, 배송옵션을 입력 받아 최종 출력 메시지를 alert 으로 띄워지게 해주세요.
+        상품재고 및 최초주문금액을 반드시 숫자가 입력되도록 해야 함.
+        회원등급과 배송옵션은 Drop-down List 형태로 반영해야 함.
+        버튼 클릭하면 해당 입력 값의 유효성 체크 후 함수 호출되도록 해야 함.
+        함수 호출 및 함수 내 로직 수행 후 최종 출력 메시지가 alert() 을 활용하여 보여져야 함.
+        CSS 도 일부 적용 되도록 해야 함. (선택자, 속성, 값) -->
+
+
+
+
+    <script>
+        function calculateOrderAmount(membership, orderAmount, shippingOption) {
+            let amount = orderAmount;
+            
+            // 회원등급 할인
+            switch (membership) {
+                case "VIP":
+                    amount *= 0.9;
+                    break;
+                case "Gold":
+                    amount *= 0.95;
+                    break;
+            }
+            
+            // 금액별 할인
+            if (amount > 200000) {
+                amount -= 15000;
+            } else if (amount > 100000) {
+                amount -= 5000;
+            }
+            
+            // 배송비
+            if (shippingOption === "fast") {
+                amount += 3000;
+            }
+            
+            return amount;
+        }
+
+        function processOrder2(itemStock, membership, orderAmount, shippingOption) {
+            if ( itemStock > 0 ) {
+                switch (membership) {
+                    case "VIP":
+                        console.log("VIP 회원입니다. 10% 할인 적용.");
+                        orderAmount *= 0.9; // 10% 할인
+                        break;
+                    case "Gold":
+                        console.log("Gold 회원입니다. 5% 할인 적용.");
+                        orderAmount *= 0.95; // 5% 할인
+                        break;
+                    default:
+                        console.log("일반 회원입니다. 할인 없음.");
+                        break;
+                }
+
+                if (orderAmount > 200000) {
+                    console.log("15000원 추가 할인")
+                    orderAmount -= 15000; // 15000원 추가 할인
+                } else if (orderAmount > 100000) {
+                    console.log("5000원 추가 할인")
+                    orderAmount -= 5000; // 5000원 추가 할인
+                } else {
+                }
+
+                if (shippingOption === "fast") { 
+                    console.log("빠른 배송을 선택하셨습니다. 3000원 추가 비용이 발생합니다.");
+                    orderAmount += 3000; // 빠른 배송 추가 비용
+                } else {
+                    console.log("배송 옵션이 잘못되었습니다.");
+                }
+                console.log(`주문이 완료되었습니다. 총 금액은 ${orderAmount}원입니다.`);
+                alert(`주문이 완료되었습니다. 총 금액은 ${orderAmount}원입니다.`);
+
+            } else {
+                console.log("재고가 없습니다. 주문을 완료할 수 없습니다.");
+                alert("재고가 없습니다. 주문을 완료할 수 없습니다.");
+            }
+
+        }
+
+        function processOrder(itemStock, membership, orderAmount, shippingOption) {
+            if (itemStock > 0) {
+                let finalAmount = calculateOrderAmount(membership, orderAmount, shippingOption);
+                alert(`주문이 완료되었습니다. 총 금액은 ${finalAmount}원입니다.`);
+            } else {
+                alert("재고가 없습니다.");
+            }
+        }
+
+        let order1 = {
+            itemStock: 5,
+            membership: "VIP",
+            orderAmount: 250000,
+            shippingOption: "fast"
+        }
+        let order2 = {
+            itemStock: 0,
+            membership: "Gold",
+            orderAmount: 150000,
+            shippingOption: "slow"
+        }
+
+        function showExpectedAmount() {
+            let membership = document.getElementById('membership').value;
+            let orderAmount = parseFloat(document.getElementById('orderAmount').textContent);
+            let shippingOption = document.getElementById('shippingOption').value;
+            
+            if (orderAmount && membership && shippingOption) {
+                let finalAmount = calculateOrderAmount(membership, orderAmount, shippingOption);
+                document.getElementById('expectedAmount').textContent = 
+                    `예상 금액: ${finalAmount.toLocaleString()}원`;
+            } else {
+                document.getElementById('expectedAmount').textContent = 
+                    '모든 정보를 입력해주세요';
+            }
+        }
+        //실행
+        console.log("주문 처리 시작");
+        //processOrder(order1.itemStock, order1.membership, order1.orderAmount, order1.shippingOption);
+        //processOrder(order2.itemStock, order2.membership, order2.orderAmount, order2.shippingOption);
+    
+        function submitOrder() {
+            let itemStock = document.getElementById('itemStock').textContent;
+            let membership = document.getElementById('membership').value;
+            let orderAmount = document.getElementById('orderAmount').textContent;
+            let selectedValue = document.getElementById('shippingOption').value;
+
+            if (isNaN(itemStock) || itemStock === '') {
+                alert('상품 재고는 숫자를 입력해주세요');
+                return;
+            }
+            
+            if (isNaN(orderAmount) || orderAmount === '') {
+                alert('주문 금액은 숫자를 입력해주세요');
+                return;
+            }
+            
+            if (membership === '') {
+                alert('회원 등급을 입력해주세요');
+                return;
+            }
+            
+            if (selectedValue === '') {
+                alert('배송 옵션을 선택해주세요');
+                return;
+            }
+
+            itemStock = parseInt(itemStock);
+            orderAmount = parseFloat(orderAmount);
+            console.log(typeof itemStock, typeof membership, typeof orderAmount, typeof selectedValue);
+
+            let order = {
+                itemStock: itemStock,
+                membership: membership,
+                orderAmount: orderAmount,
+                shippingOption: selectedValue
+            }
+
+            processOrder(order.itemStock, order.membership, order.orderAmount, order.shippingOption);
+        }
+    </script>
+
+
+
+    <div>
+        <p>아래에 상품 재고를 입력해주세요</p>
+    </div>
+    <div id="itemStock" contenteditable="true" class="input-style" oninput="showExpectedAmount()">
+    </div>
+
+    <div>
+        <p>아래에 회원 등급을 선택해주세요</p>
+    </div>
+    <select id="membership" class="select-style" onchange="showExpectedAmount()">
+        <option value="" disabled selected hidden>회원 등급을 선택해주세요</option>
+        <option value="VIP">VIP (10% 할인)</option>
+        <option value="Gold">Gold (5% 할인)</option>
+        <option value="Regular">일반</option>
+    </select>
+
+    <div>
+        <p>아래에 주문 금액을 입력해주세요</p>
+    </div>
+    <div id="orderAmount" contenteditable="true" class="input-style" oninput="showExpectedAmount()">
+    </div>
+
+    <div>
+        <p>아래에 배송 옵션을 선택해주세요</p>
+    </div>
+    <select id="shippingOption" class="select-style" onchange="showExpectedAmount()">
+        <option value="" disabled selected hidden>배송 옵션을 선택해주세요</option>
+        <option value="fast">빠른 배송 (+3000원)</option>
+        <option value="normal">일반 배송</option>
+    </select>
+
+
+    <div>
+        <h5 id="expectedAmount">모든 정보를 입력하면 예상 금액이 표시됩니다</h5>
+    </div> 
+
+        <button onclick="submitOrder()">주문 완료</button>
+
+</body>
+</html>

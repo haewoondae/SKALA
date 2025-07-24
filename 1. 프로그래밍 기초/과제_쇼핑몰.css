@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #755454; /* 원하는 색상 */
+}
+
+body {
+    background-color: #755454;
+}
+
+body p {
+    color: white;
+}
+.center{
+    text-align: center;
+    margin: 10px auto;
+}
+h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+
+}
+
+h5 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+
+}
+
+body p {
+    color: white;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 헤더 컨테이너 */
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: black; /* 헤더 배경색 */
+}
+
+/* 바디 컨테이너 */
+.body-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #755039ec;
+
+
+}
+
+
+.select-style {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid aliceblue;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px ;
+}
+
+/* contenteditable용 클래스 */
+.input-style {
+    width: 100%;
+    border: 2px solid black;
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+.input-style:focus {
+    border-color: black;
+    outline: none;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
