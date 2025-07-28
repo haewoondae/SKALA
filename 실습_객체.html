@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체의 특징
+        // 1. 키-값 쌍: 객체는 키-값 쌍으로 이루어진 데이터 구조입니다.
+        // 2. 프로퍼티/ 메서드: 프로퍼티(속성)와 메서드(함수)를 포함합니다. 
+        // 3. 다양한 데이터 타입: 객체의 값으로는 숫자, 문자열, 배열, 함수 등 다양한 타입을 사용할 수 있습니다.
+
+        // 객체 생성 방법
+        const person = {
+            name: "홍길동",
+            age: 30,
+            greet: function() {
+                console.log("안녕하세요, " + this.name + "입니다.");
+            }
+        };
+
+        // 객체 접근 방법
+        console.log(person.name); // "홍길동"
+        console.log(person["age"]); // 30
+
+        // 객체 메소드 호출
+        person.greet(); // "안녕하세요, 홍길동입니다."
+
+        // 객체 프로퍼티 추가/수정/삭제
+        person.email = "hong@example.com"; // 추가
+        console.log(person.email); // "hong@example.com"
+
+        person.age = 31; // 수정
+        console.log(person.age); // 31
+
+        delete person.email; // 삭제
+        console.log(person.email); // undefined
+    </script>
+</body>
+</html>

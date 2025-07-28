@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 드가자</title>
+</head>
+
+
+<body>
+    
+    <script> 
+        [ 스프레드 문법 예시 1 ]
+        const original = [1, 2, 3];
+        const copy = [...original];
+        console.log(copy); // [1, 2, 3]
+
+        [ 스프레드 문법 예시 2 ]
+        const arr1 = [1, 2];
+        const arr2 = [3, 4];
+        const merged = [...arr1, ...arr2];
+        console.log(merged); // [1, 2, 3, 4]
+
+        [ 스프레드 문법 예시 3 ]
+        const str = "hello";
+        const arr = [...str];
+        console.log(arr); // ['h', 'e', 'l', 'l', 'o']
+
+        [ 스프레드 문법 예시 4 ]
+        const arr = [2, 3];
+        const newArr = [1, ...arr, 4];
+        console.log(newArr); // [1, 2, 3, 4]
+
+        [2차원 배열]
+        const array = [
+        [4, 5, 6, 7],
+        [8, 9, 10, 11]
+        ];
+        console.table(array);
+
+        const arr = [1, 2, 3, 4];
+        console.log(arr);
+        arr.length = 5; // 길이 변경해서 빈 공간 확보
+        console.log(arr)
+        arr[4] = 10;
+        console.log(arr);
+        arr.push(11); // push를 통해 요소 추가
+        console.log(arr);
+
+        [ 스프레드 연산자]
+        const original = [1, [2, 3], 4];
+        const shallowCopyArray = [...original];
+
+        // 얉은 복사: 최상위 요소는 독립적
+        shallowCopyArray[0] = 10;
+        console.log(original[0]); // 1 (독립적)
+
+        // 중첩 배열은 참조를 공유
+        shallowCopyArray[1][0] = 20;
+        console.log(originalArray[1][0]); // 20 (원본도 영향을 받음 )
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

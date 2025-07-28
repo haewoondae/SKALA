@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 호이스팅(Hoisting)
+        // 호이스팅은 변수 선언과 함수 선언이 해당 스코프의 최상단으로 끌어올려지는 현상입니다.
+        // 코드 실행 전, 변수와 함수 선언을 메모리에 먼저 등록
+
+        console.log(a);
+        var a = 10;
+
+        // 위 코드는 아래와 같이 해석됩니다.
+        // var a; // 변수 선언이 최상단으로 끌어올려짐
+        // console.log(a); // a는 아직 정의되지 않았음
+        // a = 10; // 변수 초기화
+        // 따라서, 위 코드는 'undefined'를 출력합니다.
+
+        //var / let / const 각 선언을 통함 비교
+
+    </script>
+</body>
+</html>

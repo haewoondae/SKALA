@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식량 분배</title>
+</head>
+
+
+<body>
+    <script>
+        const foods = [
+            "쌀", "보리", "콩", "김치",
+            "미역", "배추", "당근", "고추"
+        ];
+
+        const poors = ["철수", "영희", "민수"];
+        const results = [];
+
+        for (let poor of poors) {
+            results.push({
+                name: poor,
+                items: []
+            });
+        }
+
+        // for (let i = 0; i < foods.length; i++) {
+        //     const personIndex = i % poors.length; // 사람 순서를 순환
+        //     results[personIndex].items.push(foods[i]);
+        // }
+        
+        let personIndex = 0; // for문 밖에서 선언
+        
+        for (let food of foods) {
+            results[personIndex].items.push(food);
+
+            personIndex++; // 다음 사람으로
+            if (personIndex >= poors.length) {
+                personIndex = 0; // 마지막 사람이면 다시 첫 번째 사람으로
+            }
+        }
+
+        console.table(results);
+    </script>
+
+</body>
+    
+</html>

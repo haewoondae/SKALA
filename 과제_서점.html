@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 서점</title>
+    <link rel="stylesheet" href="서점.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 온라인 서점</h1>
+        
+        <div class="search-section">
+            <h2>책 검색</h2>
+            <div class="search-container">
+                <select id="searchType" class="search-select">
+                    <option value="title">제목</option>
+                    <option value="author">저자</option>
+                </select>
+                <div id="searchInput" contenteditable="true" class="search-input" placeholder="검색어를 입력하세요...">
+                </div>
+            </div>
+        </div>
+
+        <div class="add-book-section">
+            <h2>새 책 추가</h2>
+            <div class="add-book-form">
+                <div class="input-group">
+                    <label>제목:</label>
+                    <div id="newBookTitle" contenteditable="true" class="book-input" placeholder="책 제목을 입력하세요"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label>저자:</label>
+                    <div id="newBookAuthor" contenteditable="true" class="book-input" placeholder="저자명을 입력하세요"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label>가격:</label>
+                    <div id="newBookPrice" contenteditable="true" class="book-input" placeholder="가격을 입력하세요"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label>재고:</label>
+                    <div id="newBookStock" contenteditable="true" class="book-input" placeholder="재고 수량을 입력하세요"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label>카테고리:</label>
+                    <select id="newBookCategory" class="search-select">
+                        <option value="">카테고리 선택</option>
+                        <option value="프로그래밍">프로그래밍</option>
+                        <option value="경제">경제</option>
+                        <option value="소설">소설</option>
+                        <option value="역사">역사</option>
+                        <option value="과학">과학</option>
+                        <option value="철학">철학</option>
+                    </select>
+                </div>
+                
+                <button id="addBookBtn" class="add-book-button">책 추가하기</button>
+            </div>
+        </div>
+
+        <div class="books-section">
+            <h2>책 목록</h2>
+            <div class="category-filter">
+                <label>카테고리: </label>
+                <select id="categoryFilter" class="search-select">
+                    <option value="">전체</option>
+                    <option value="프로그래밍">프로그래밍</option>
+                    <option value="경제">경제</option>
+                    <option value="소설">소설</option>
+                    <option value="역사">역사</option>
+                    <option value="과학">과학</option>
+                    <option value="철학">철학</option>
+                </select>
+            </div>
+            <div id="booksContainer" class="books-grid">
+                <!-- 책 목록이 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <script> 
+        const books = [
+            {
+                title: "자바스크립트 완벽 가이드",
+                author: "David Flanagan",
+                price: 35000,
+                stock: 5,
+                category: "프로그래밍"
+            },
+            {
+                title: "모던 자바스크립트 Deep Dive",
+                author: "이웅모",
+                price: 40000,
+                stock: 0,
+                category: "프로그래밍"
+            },
+            {
+                title: "돈의 심리학",
+                author: "모건 하우절",
+                price: 18000,
+                stock: 3,
+                category: "경제"
+            },
+            {
+                title: "불편한 편의점",
+                author: "김호연",
+                price: 14500,
+                stock: 2,
+                category: "소설"
+            },
+            {
+                title: "Clean Code",
+                author: "Robert C. Martin",
+                price: 32000,
+                stock: 7,
+                category: "프로그래밍"
+            },
+            {
+                title: "리액트를 다루는 기술",
+                author: "김민준",
+                price: 36000,
+                stock: 4,
+                category: "프로그래밍"
+            },
+            {
+                title: "파이썬 알고리즘 인터뷰",
+                author: "박상길",
+                price: 42000,
+                stock: 6,
+                category: "프로그래밍"
+            },
+            {
+                title: "데이터베이스 개론",
+                author: "김연희",
+                price: 28000,
+                stock: 0,
+                category: "프로그래밍"
+            },
+            {
+                title: "부의 추월차선",
+                author: "엠제이 드마코",
+                price: 16000,
+                stock: 8,
+                category: "경제"
+            },
+            {
+                title: "투자의 정석",
+                author: "벤자민 그레이엄",
+                price: 22000,
+                stock: 5,
+                category: "경제"
+            },
+            {
+                title: "경제학 콘서트",
+                author: "팀 하포드",
+                price: 15000,
+                stock: 3,
+                category: "경제"
+            },
+            {
+                title: "시장경제의 원리",
+                author: "박준식",
+                price: 25000,
+                stock: 0,
+                category: "경제"
+            },
+            {
+                title: "미드나잇 라이브러리",
+                author: "매트 헤이그",
+                price: 13500,
+                stock: 9,
+                category: "소설"
+            },
+            {
+                title: "82년생 김지영",
+                author: "조남주",
+                price: 12000,
+                stock: 7,
+                category: "소설"
+            },
+            {
+                title: "완득이",
+                author: "김려령",
+                price: 11000,
+                stock: 4,
+                category: "소설"
+            },
+            {
+                title: "1984",
+                author: "조지 오웰",
+                price: 13000,
+                stock: 6,
+                category: "소설"
+            },
+            {
+                title: "해리포터와 마법사의 돌",
+                author: "J.K. 롤링",
+                price: 14000,
+                stock: 12,
+                category: "소설"
+            },
+            {
+                title: "우리는 모두 조금 이상하다",
+                author: "박지현",
+                price: 12500,
+                stock: 0,
+                category: "소설"
+            },
+            {
+                title: "사피엔스",
+                author: "유발 하라리",
+                price: 19000,
+                stock: 8,
+                category: "역사"
+            },
+            {
+                title: "한국사 편지",
+                author: "박은봉",
+                price: 16500,
+                stock: 5,
+                category: "역사"
+            },
+            {
+                title: "세계사 속의 한국",
+                author: "김태식",
+                price: 18000,
+                stock: 3,
+                category: "역사"
+            },
+            {
+                title: "총, 균, 쇠",
+                author: "재레드 다이아몬드",
+                price: 24000,
+                stock: 6,
+                category: "역사"
+            },
+            {
+                title: "코스모스",
+                author: "칼 세이건",
+                price: 20000,
+                stock: 4,
+                category: "과학"
+            },
+            {
+                title: "이기적 유전자",
+                author: "리처드 도킨스",
+                price: 22000,
+                stock: 0,
+                category: "과학"
+            },
+            {
+                title: "물리학 강의",
+                author: "리처드 파인만",
+                price: 35000,
+                stock: 2,
+                category: "과학"
+            },
+            {
+                title: "생명이란 무엇인가",
+                author: "에르빈 슈뢰딩거",
+                price: 17000,
+                stock: 5,
+                category: "과학"
+            },
+            {
+                title: "수학의 아름다움",
+                author: "박형주",
+                price: 19500,
+                stock: 7,
+                category: "과학"
+            },
+            {
+                title: "아트 오브 일렉트로닉스",
+                author: "폴 호로위츠",
+                price: 55000,
+                stock: 1,
+                category: "과학"
+            },
+            {
+                title: "인간의 조건",
+                author: "한나 아렌트",
+                price: 21000,
+                stock: 3,
+                category: "철학"
+            },
+            {
+                title: "니체의 인간학",
+                author: "백승영",
+                price: 18500,
+                stock: 4,
+                category: "철학"
+            }
+        ];
+
+            // 여러 개의 key를 받아, key: 값 쌍을 한 줄로 이어 출력하는 함수
+            function printBookInfo(book, keys) {
+                const parts = keys.map(function(key) {   // 각 키에 대해 "key: 값" 문자열을 만들어줌
+                    return key + ": " + book[key];           // 각 속성명에 맞는 값을 동적으로 가져옴
+
+            });
+
+                // 배열로 만들어진 "key: 값" 쌍들을 공백(또는 쉼표 등)으로 이어붙임
+                const line = parts.join(" / ");     // 구분자 원하는 대로(" ", ", ", "/" 등) 변경 가능
+                // 한 줄로 출력
+                console.log(line);
+            }
+
+            function printAllbooks(books) {
+                for (let i = 0; i < books.length; i++) {
+                    printBookInfo(books[i], ["title"]);
+                }
+            }
+
+            function printAvailableBooks(books) {
+                for (book of books) {
+                    if (book.stock >0) {
+                        printBookInfo(book, ["title", "stock"]);
+                    } else {
+                    }
+                }
+            }
+
+            function printSelectedCategoryBooks(books, category) {
+                books.forEach(book => {
+                    if (book.category === category) {
+                        printBookInfo(book, ["title"]);
+                    }
+                });
+            }
+
+            function calculateAvgPrice(books) {
+                var totalPrice = 0;                         // var은 함수 전체에서 유효
+                for (let book of books) {                   // let은 for문 안에서만 유효
+                    totalPrice += book.price;
+                }
+                var avgPrice = totalPrice / books.length;
+                return avgPrice;
+            }
+
+            function addBookStock(books, amount = 10) {
+                books.forEach(book => {
+                    if (book.stock === 0) {
+                        book.stock += amount; // stock이 없으면 amount만큼 추가
+                    }
+                });
+            }
+            
+
+            // printAllbooks(books);
+            // printAvailableBooks(books);
+            // printSelectedCategoryBooks(books, "프로그래밍");
+            // console.log("프로그래밍 책의 평균 가격: " + calculateAvgPrice(books));
+            // addBookStock(books, 10);
+            // for (let book of books) {
+            //     printBookInfo(book, ["title", "stock"]);
+            // }
+
+            // 홈페이지 기능 추가
+            
+            // 책 카드 HTML 생성 함수
+            function createBookCard(book) {
+                const stockText = book.stock > 0 ? `재고: ${book.stock}권` : '품절';
+                const stockClass = book.stock > 0 ? 'book-stock' : 'book-stock out-of-stock';
+                
+                return `
+                    <div class="book-card">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-author">저자: ${book.author}</div>
+                        <div class="book-price">가격: ${book.price.toLocaleString()}원</div>
+                        <div class="${stockClass}">${stockText}</div>
+                        <div class="book-category">${book.category}</div>
+                    </div>
+                `;
+            }
+
+            // 책 목록 표시 함수
+            function displayBooks(booksToShow) {
+                const container = document.getElementById('booksContainer');
+                
+                if (booksToShow.length === 0) {
+                    container.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+                    return;
+                }
+                
+                container.innerHTML = booksToShow.map(book => createBookCard(book)).join('');
+            }
+
+            // 검색 함수
+            function searchBooks() {
+                const searchType = document.getElementById('searchType').value;
+                const searchTerm = document.getElementById('searchInput').textContent.toLowerCase().trim();
+                const categoryFilter = document.getElementById('categoryFilter').value;
+                
+                let filteredBooks = books;
+                
+                // 카테고리 필터 적용
+                if (categoryFilter !== '') {
+                    filteredBooks = filteredBooks.filter(book => book.category === categoryFilter);
+                }
+                
+                // 검색어 필터 적용
+                if (searchTerm !== '') {
+                    filteredBooks = filteredBooks.filter(book => {
+                        if (searchType === 'title') {
+                            return book.title.toLowerCase().includes(searchTerm);
+                        } else if (searchType === 'author') {
+                            return book.author.toLowerCase().includes(searchTerm);
+                        }
+                        return false;
+                    });
+                }
+                
+                displayBooks(filteredBooks);
+            }
+
+            // 이벤트 리스너 설정
+            document.getElementById('searchInput').addEventListener('input', searchBooks);
+            document.getElementById('searchType').addEventListener('change', searchBooks);
+            document.getElementById('categoryFilter').addEventListener('change', searchBooks);
+
+            // 책 추가 기능
+            function addNewBook() {
+                // 입력값 가져오기
+                const title = document.getElementById('newBookTitle').textContent.trim();    //.trim()은 앞뒤 공백 제거
+                const author = document.getElementById('newBookAuthor').textContent.trim();  //.getElementById는 HTML 요소를 가져오는 메서드
+                const price = document.getElementById('newBookPrice').textContent.trim();    // .textContent는 요소의 텍스트 내용을 가져옴
+                const stock = document.getElementById('newBookStock').textContent.trim();    
+                const category = document.getElementById('newBookCategory').value;           // .value는 select 요소의 선택된 값을 가져옴
+
+                console.log('입력된 값들:', { title, author, price, stock, category });
+                
+                // 간단한 빈 값 체크만
+                if (title === '') {
+                    alert('책 제목을 입력해주세요!');
+                    return;
+                }
+                
+                if (author === '') {
+                    alert('저자명을 입력해주세요!');
+                    return;
+                }
+                
+                if (price === '') {
+                    alert('가격을 입력해주세요!');
+                    return;
+                }
+                
+                if (stock === '') {
+                    alert('재고 수량을 입력해주세요!');
+                    return;
+                }
+                
+                if (category === '') {
+                    alert('카테고리를 선택해주세요!');
+                    return;
+                }
+                
+                console.log('유효성 검사 통과!');
+                // 여기서 다음 단계를 진행할 예정입니다
+            }
+
+            // 버튼 클릭 이벤트 연결
+            document.getElementById('addBookBtn').addEventListener('click', addNewBook);
+
+            // 입력 제한 기능 추가
+            // 가격 입력 제한 (숫자만)
+            document.getElementById('newBookPrice').addEventListener('input', function() {
+                let text = this.textContent;
+                // 숫자가 아닌 문자 제거
+                let numbersOnly = text.replace(/[^0-9]/g, ''); // .replace()는 문자열에서 특정 문자를 다른 문자로 바꾸는 메서드
+                if (text !== numbersOnly) {                    // 만약 입력된 텍스트가 숫자만으로 이루어지지 않았다면
+                    this.textContent = numbersOnly;            // 숫자만으로 이루어진 텍스트로 변경
+                    // 커서를 끝으로 이동
+                    let range = document.createRange();        // .createRange()는 새로운 Range 객체를 생성하는 메서드
+                    range.selectNodeContents(this);            // .selectNodeContents()는 Range 객체에 특정 노드의 내용을 선택하도록 설정
+                    range.collapse(false);                     // .collapse()는 Range 객체의 시작과 끝을 동일하게 설정하여 커서를 끝으로 이동
+                    let sel = window.getSelection();           // .getSelection()은 현재 선택된 텍스트 범위를 가져오는 메서드
+                    range.selectNodeContents(this);            // 선택된 노드의 내용을 Range 객체에 설정
+                    range.collapse(false);                     // 커서를 끝으로 이동
+                    sel.removeAllRanges();                     // .removeAllRanges()는 현재 선택된 모든 범위를 제거
+                    sel.addRange(range);                       // .addRange()는 Range 객체를 현재 선택된 범위에 추가
+                }
+            });
+
+            // 재고 입력 제한 (숫자만)
+            document.getElementById('newBookStock').addEventListener('input', function() {
+                let text = this.textContent;
+                // 숫자가 아닌 문자 제거
+                let numbersOnly = text.replace(/[^0-9]/g, '');
+                if (text !== numbersOnly) {
+                    this.textContent = numbersOnly;
+                    // 커서를 끝으로 이동
+                    let range = document.createRange();
+                    let sel = window.getSelection();
+                    range.selectNodeContents(this);
+                    range.collapse(false);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            });
+
+            // 제목과 저자는 특수문자 일부 제한 (기본적인 문자만 허용)
+            document.getElementById('newBookTitle').addEventListener('input', function(e) {
+                // 한글 입력 중일 때는 처리하지 않음 (IME 문제 해결)
+                if (e.isComposing || e.inputType === 'insertCompositionText') {
+                    return;
+                }
+                
+                let text = this.textContent;
+                // 한글, 영문, 숫자, 공백, 일부 특수문자만 허용 (공백을 명확히 포함)
+                let validText = text.replace(/[^\u3131-\u3163\uac00-\ud7a3a-zA-Z0-9\s\-\(\)\.\,]/g, '');
+                if (text !== validText) {
+                    this.textContent = validText;
+                    // 커서를 끝으로 이동
+                    let range = document.createRange();
+                    let sel = window.getSelection();
+                    range.selectNodeContents(this);
+                    range.collapse(false);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            });
+
+            document.getElementById('newBookAuthor').addEventListener('input', function(e) {
+                // 한글 입력 중일 때는 처리하지 않음 (IME 문제 해결)
+                if (e.isComposing || e.inputType === 'insertCompositionText') {
+                    return;
+                }
+                
+                let text = this.textContent;
+                // 한글, 영문, 숫자, 공백, 일부 특수문자만 허용 (공백을 명확히 포함)
+                let validText = text.replace(/[^\u3131-\u3163\uac00-\ud7a3a-zA-Z0-9\s\-\(\)\.\,]/g, '');
+                if (text !== validText) {
+                    this.textContent = validText;
+                    // 커서를 끝으로 이동
+                    let range = document.createRange();
+                    let sel = window.getSelection();
+                    range.selectNodeContents(this);
+                    range.collapse(false);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                }
+            });
+
+            // 초기 책 목록 표시
+            displayBooks(books);
+
+
+    </script>
+</body>
+</html>
