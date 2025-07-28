@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>async / await & Promise 예제</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2rem;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+      }
+      #output {
+        margin-top: 1.5rem;
+        white-space: pre-line;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌀 async / await + Promise 예제</h1>
+    <button onclick="loadUserData()">사용자 정보 불러오기</button>
+    <div id="output"></div>
+
+    <script>
+      const output = document.getElementById("output");
+      const log = (msg) => (output.innerText += msg + "\n");
+
+      // ✅ Promise로 API 시뮬레이션
+      function fetchUser(id) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({ id, name: "Steve", age: 25 });
+          }, 1000);
+        });
+      }
+
+      function fetchPosts(userId) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve([
+              { id: 1, title: "첫 번째 게시글" },
+              { id: 2, title: "두 번째 게시글" },
+            ]);
+          }, 1000);
+        });
+      }
+
+      // ✅ async/await로 순차 실행
+      async function loadUserData() {
+        output.innerText = ""; // 초기화
+        log("⏳ 사용자 정보를 불러오는 중...");
+
+        try {
+          const user = await fetchUser(1);
+          log(`👤 사용자 이름: ${user.name}, 나이: ${user.age}`);
+
+          log("⏳ 게시글 정보를 불러오는 중...");
+          const posts = await fetchPosts(user.id);
+
+          log("📝 사용자 게시글:");
+          posts.forEach((post) => {
+            log(`- ${post.title}`);
+          });
+        } catch (error) {
+          log(`❌ 에러 발생: ${error}`);
+        }
+
+        log("✅ 작업 완료");
+      }
+    </script>
+  </body>
+</html>
