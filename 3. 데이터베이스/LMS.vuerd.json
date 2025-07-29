@@ -1,0 +1,140 @@
+{
+  "version": "0.9.1",
+  "tables": [
+    {
+      "name": "user",
+      "columns": [
+        {
+          "name": "id",
+          "dataType": "int",
+          "default": "",
+          "comment": "PK",
+          "unique": false,
+          "autoIncrement": true,
+          "primaryKey": true,
+          "notNull": true
+        },
+        {
+          "name": "username",
+          "dataType": "varchar(255)",
+          "notNull": true,
+          "primaryKey": false
+        },
+        {
+          "name": "email",
+          "dataType": "varchar(255)"
+        }
+      ],
+      "ui": {}
+    },
+    {
+      "name": "product",
+      "columns": [
+        {
+          "name": "id",
+          "dataType": "int",
+          "autoIncrement": true,
+          "primaryKey": true,
+          "notNull": true
+        },
+        {
+          "name": "name",
+          "dataType": "varchar(100)",
+          "notNull": true
+        },
+        {
+          "name": "price",
+          "dataType": "decimal(10,2)",
+          "notNull": true
+        }
+      ],
+      "ui": {}
+    },
+    {
+      "name": "order",
+      "columns": [
+        {
+          "name": "id",
+          "dataType": "int",
+          "primaryKey": true,
+          "autoIncrement": true,
+          "notNull": true
+        },
+        {
+          "name": "user_id",
+          "dataType": "int",
+          "notNull": true
+        },
+        {
+          "name": "order_date",
+          "dataType": "datetime",
+          "notNull": true
+        }
+      ],
+      "ui": {}
+    },
+    {
+      "name": "order_item",
+      "columns": [
+        {
+          "name": "id",
+          "dataType": "int",
+          "autoIncrement": true,
+          "primaryKey": true,
+          "notNull": true
+        },
+        {
+          "name": "order_id",
+          "dataType": "int",
+          "notNull": true
+        },
+        {
+          "name": "product_id",
+          "dataType": "int",
+          "notNull": true
+        },
+        {
+          "name": "quantity",
+          "dataType": "int",
+          "notNull": true
+        }
+      ],
+      "ui": {}
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "start": {
+        "tableName": "user",
+        "columnNames": ["id"]
+      },
+      "end": {
+        "tableName": "order",
+        "columnNames": ["user_id"]
+      }
+    },
+    {
+      "relationshipType": "one-to-many",
+      "start": {
+        "tableName": "order",
+        "columnNames": ["id"]
+      },
+      "end": {
+        "tableName": "order_item",
+        "columnNames": ["order_id"]
+      }
+    },
+    {
+      "relationshipType": "one-to-many",
+      "start": {
+        "tableName": "product",
+        "columnNames": ["id"]
+      },
+      "end": {
+        "tableName": "order_item",
+        "columnNames": ["product_id"]
+      }
+    }
+  ]
+}
