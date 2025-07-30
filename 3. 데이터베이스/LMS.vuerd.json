@@ -4,9 +4,9 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -623,
-    "scrollLeft": -542,
-    "zoomLevel": 1,
+    "scrollTop": -472.6344,
+    "scrollLeft": -479.5295,
+    "zoomLevel": 0.55,
     "show": 431,
     "database": 16,
     "databaseName": "postgres",

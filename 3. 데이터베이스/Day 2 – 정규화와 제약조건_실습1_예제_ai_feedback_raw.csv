@@ -1,0 +1,4 @@
+feedback_id,model_name,user_name,prompt_text,response_text,rating,tags
+F001,gpt-4,이정열,너 오늘 기분 어때?,나는 기분이 좋지 않아.,3.5,"['감성', '비판적']"
+F002,mistral-7b,김민정,"안녕, 오늘 날씨 어때?",오늘은 맑고 따뜻할 거야.,4.2,"['날씨', '정보']"
+F003,gpt-4,이정열,코딩하는 법 알려줘,파이썬으로는 print부터 시작해봐.,4.7,"['코딩', '학습', '친절함']"
