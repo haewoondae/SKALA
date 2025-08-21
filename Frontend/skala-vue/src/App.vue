@@ -1,8 +1,9 @@
 <template>
-  <computed></computed>
+  <ParentComp></ParentComp>
 </template>
 
 
 <script setup>
-import computed from './components/computed.vue'
+import ParentComp from './components/ParentComp.vue'
+
 </script>
