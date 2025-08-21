@@ -1,0 +1,33 @@
+2025-08-12 17:03:06 | INFO | 앱 실행 시작
+2025-08-12 17:03:06 | ERROR | 예외 발생 예시
+Traceback (most recent call last):
+  File "/Users/ichangmin/내 드라이브/SKALA/SKALA/6. 데이터분석 및 MLOps/main.py", line 45, in main
+    1 / 0                           # 예외 일부러 발생
+    ~~^~~
+ZeroDivisionError: division by zero
+2025-08-12 17:22:42,171 | INFO | 앱 실행 시작
+2025-08-12 17:22:42,171 | WARNING | 이것은 경고 메시지입니다
+2025-08-12 17:22:42,171 | ERROR | 예외 발생 예시: division by zero
+2025-08-12 17:22:42,171 | INFO | 앱 실행 완료
+2025-08-12 17:26:44,398 | INFO | 앱 실행 시작
+2025-08-12 17:26:44,398 | WARNING | 이것은 경고 메시지입니다
+2025-08-12 17:26:44,398 | ERROR | 예외 발생 예시: division by zero
+2025-08-12 17:26:44,398 | INFO | 앱 실행 완료
+2025-08-12 17:26:50,557 | INFO | 앱 실행 시작
+2025-08-12 17:26:50,557 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:28:41,438 | INFO | 앱 실행 시작
+2025-08-12 17:28:41,438 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:37:28,752 | INFO | 앱 실행 시작
+2025-08-12 17:37:28,752 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:42:42,128 | INFO | 앱 실행 시작
+2025-08-12 17:42:42,128 | DEBUG | 환경 변수 로딩 완료
+2025-08-12 17:42:42,128 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:42:56,996 | INFO | 앱 실행 시작
+2025-08-12 17:42:56,996 | DEBUG | 환경 변수 로딩 완료
+2025-08-12 17:42:56,996 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:42:59,619 | INFO | 앱 실행 시작
+2025-08-12 17:42:59,619 | DEBUG | 환경 변수 로딩 완료
+2025-08-12 17:42:59,620 | ERROR | ZeroDivisionError 예외 발생: division by zero
+2025-08-12 17:46:21,088 | INFO | 앱 실행 시작
+2025-08-12 17:46:21,088 | DEBUG | 환경 변수 로딩 완료
+2025-08-12 17:46:21,088 | ERROR | ZeroDivisionError 예외 발생: division by zero

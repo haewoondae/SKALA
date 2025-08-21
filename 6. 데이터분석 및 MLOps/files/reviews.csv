@@ -1,0 +1,201 @@
+review_id,product_id,category,review_text,review_length,num_words,sentiment_score,rating
+R0001,P158,home,Amazing quality and fast shipping.,134,27,-0.6,3
+R0002,P117,fashion,"Just okay, nothing special.",115,28,-0.1,5
+R0003,P160,fashion,Not worth the money.,139,32,0.2,5
+R0004,P127,fashion,"Just okay, nothing special.",165,32,0.22,4
+R0005,P151,home,"Just okay, nothing special.",112,15,-0.03,4
+R0006,P182,home,"Just okay, nothing special.",112,18,0.51,4
+R0007,P195,home,"Excellent product, I loved it!",167,28,-0.33,3
+R0008,P154,fashion,Amazing quality and fast shipping.,143,28,0.13,3
+R0009,P144,sports,"Excellent product, I loved it!",105,28,0.26,2
+R0010,P144,sports,"Terrible experience, would not buy again.",136,51,0.46,5
+R0011,P128,fashion,"Just okay, nothing special.",106,28,0.56,4
+R0012,P151,electronics,Amazing quality and fast shipping.,106,32,-0.36,4
+R0013,P152,electronics,Not worth the money.,127,31,-0.57,4
+R0014,P189,home,"Excellent product, I loved it!",62,29,0.84,5
+R0015,P179,home,Not worth the money.,68,22,0.37,2
+R0016,P136,home,"Terrible experience, would not buy again.",103,30,-0.17,4
+R0017,P153,electronics,"Terrible experience, would not buy again.",89,19,0.98,4
+R0018,P153,fashion,Not worth the money.,129,23,0.26,4
+R0019,P132,electronics,Amazing quality and fast shipping.,92,21,0.79,1
+R0020,P192,sports,Not worth the money.,77,25,0.23,5
+R0021,P111,home,,163,41,1.0,5
+R0022,P133,sports,"Excellent product, I loved it!",113,11,1.0,4
+R0023,P137,fashion,Amazing quality and fast shipping.,122,29,0.08,4
+R0024,P182,electronics,Amazing quality and fast shipping.,77,13,0.69,5
+R0025,P125,home,Not worth the money.,103,21,0.52,5
+R0026,P170,sports,Amazing quality and fast shipping.,123,32,0.88,2
+R0027,P199,fashion,,85,25,-0.28,4
+R0028,P170,fashion,"Terrible experience, would not buy again.",131,17,0.54,4
+R0029,P189,home,"Just okay, nothing special.",101,19,0.73,4
+R0030,P102,home,"Terrible experience, would not buy again.",111,29,-0.68,5
+R0031,P100,home,Amazing quality and fast shipping.,101,19,-0.39,5
+R0032,P195,home,Amazing quality and fast shipping.,175,26,-0.82,5
+R0033,P177,fashion,"Terrible experience, would not buy again.",119,25,0.07,4
+R0034,P126,home,Not worth the money.,88,20,0.56,2
+R0035,P152,fashion,"Terrible experience, would not buy again.",144,40,0.95,5
+R0036,P129,electronics,Not worth the money.,83,29,0.24,5
+R0037,P135,fashion,"Just okay, nothing special.",126,10,1.0,2
+R0038,P150,home,"Just okay, nothing special.",61,26,-0.49,5
+R0039,P100,home,"Terrible experience, would not buy again.",80,20,-0.65,5
+R0040,P184,electronics,"Excellent product, I loved it!",125,30,0.17,4
+R0041,P135,electronics,Not worth the money.,142,19,0.39,4
+R0042,P165,fashion,Amazing quality and fast shipping.,125,24,0.18,3
+R0043,P122,home,"Excellent product, I loved it!",116,28,-0.83,1
+R0044,P101,fashion,"Terrible experience, would not buy again.",110,31,0.16,3
+R0045,P154,home,"Terrible experience, would not buy again.",75,16,-0.45,5
+R0046,P109,home,"Terrible experience, would not buy again.",98,22,0.53,1
+R0047,P192,sports,"Excellent product, I loved it!",106,21,0.38,3
+R0048,P141,fashion,"Just okay, nothing special.",151,20,-0.27,3
+R0049,P176,sports,Amazing quality and fast shipping.,130,37,-0.06,4
+R0050,P150,sports,"Just okay, nothing special.",67,27,-0.33,5
+R0051,P108,sports,,129,16,0.17,3
+R0052,P197,fashion,"Terrible experience, would not buy again.",108,31,0.68,3
+R0053,P151,home,"Just okay, nothing special.",99,39,-0.29,5
+R0054,P122,sports,"Excellent product, I loved it!",138,32,0.45,4
+R0055,P174,sports,Amazing quality and fast shipping.,150,14,-0.07,3
+R0056,P102,fashion,Amazing quality and fast shipping.,147,21,-0.2,4
+R0057,P197,electronics,"Excellent product, I loved it!",94,33,0.15,2
+R0058,P168,home,"Excellent product, I loved it!",110,20,-0.32,2
+R0059,P144,electronics,"Excellent product, I loved it!",129,28,-0.08,4
+R0060,P101,electronics,"Excellent product, I loved it!",149,30,-0.4,4
+R0061,P132,sports,"Terrible experience, would not buy again.",105,18,1.0,5
+R0062,P166,sports,"Just okay, nothing special.",114,24,0.22,3
+R0063,P168,sports,"Excellent product, I loved it!",86,2,-0.15,4
+R0064,P199,fashion,Not worth the money.,84,17,0.31,4
+R0065,P184,electronics,Amazing quality and fast shipping.,144,23,0.14,1
+R0066,P165,home,"Just okay, nothing special.",160,16,0.09,4
+R0067,P188,electronics,Amazing quality and fast shipping.,117,36,0.51,2
+R0068,P103,electronics,Amazing quality and fast shipping.,150,14,0.58,5
+R0069,P106,electronics,"Just okay, nothing special.",130,21,-0.07,2
+R0070,P142,home,Amazing quality and fast shipping.,100,25,-0.09,4
+R0071,P164,fashion,"Just okay, nothing special.",130,35,0.06,1
+R0072,P167,electronics,Not worth the money.,166,14,-0.95,5
+R0073,P124,fashion,"Terrible experience, would not buy again.",118,33,-0.56,4
+R0074,P146,sports,Not worth the money.,166,25,0.88,4
+R0075,P151,electronics,Not worth the money.,41,18,1.0,1
+R0076,P136,fashion,"Terrible experience, would not buy again.",144,28,0.08,5
+R0077,P173,sports,"Just okay, nothing special.",122,26,0.49,3
+R0078,P121,home,"Excellent product, I loved it!",111,20,0.36,5
+R0079,P156,fashion,"Just okay, nothing special.",122,25,1.0,3
+R0080,P155,sports,"Excellent product, I loved it!",60,22,0.76,2
+R0081,P189,sports,Not worth the money.,113,25,0.14,1
+R0082,P120,fashion,"Just okay, nothing special.",130,29,-0.28,4
+R0083,P146,fashion,"Just okay, nothing special.",164,36,-0.6,4
+R0084,P136,home,"Just okay, nothing special.",104,16,0.3,1
+R0085,P105,fashion,"Excellent product, I loved it!",95,39,-0.18,5
+R0086,P125,fashion,Not worth the money.,104,11,-0.51,4
+R0087,P175,fashion,Not worth the money.,147,23,-0.12,4
+R0088,P130,electronics,"Excellent product, I loved it!",129,29,-0.34,4
+R0089,P181,home,Amazing quality and fast shipping.,104,26,1.0,4
+R0090,P173,fashion,"Excellent product, I loved it!",135,20,0.64,4
+R0091,P124,fashion,"Excellent product, I loved it!",122,23,0.2,2
+R0092,P168,electronics,Amazing quality and fast shipping.,149,21,0.94,2
+R0093,P179,sports,Not worth the money.,98,20,0.24,5
+R0094,P151,electronics,"Terrible experience, would not buy again.",110,30,-0.23,5
+R0095,P111,sports,Not worth the money.,108,27,0.96,3
+R0096,P177,fashion,"Just okay, nothing special.",76,20,0.47,3
+R0097,P118,electronics,"Just okay, nothing special.",128,31,-0.32,4
+R0098,P175,electronics,"Terrible experience, would not buy again.",127,27,0.1,4
+R0099,P137,home,Not worth the money.,120,30,-0.24,1
+R0100,P133,home,Amazing quality and fast shipping.,112,29,-0.49,2
+R0101,P103,sports,"Terrible experience, would not buy again.",77,19,0.66,5
+R0102,P114,home,"Excellent product, I loved it!",107,21,1.0,4
+R0103,P199,electronics,"Just okay, nothing special.",109,30,,1
+R0104,P179,home,"Excellent product, I loved it!",95,29,0.48,3
+R0105,P102,fashion,"Terrible experience, would not buy again.",115,24,-0.13,3
+R0106,P144,electronics,"Terrible experience, would not buy again.",132,25,-0.04,4
+R0107,P149,sports,Amazing quality and fast shipping.,176,33,-0.1,1
+R0108,P190,sports,Not worth the money.,125,20,-0.23,2
+R0109,P167,electronics,"Excellent product, I loved it!",127,28,0.22,5
+R0110,P162,home,Amazing quality and fast shipping.,117,23,-0.22,2
+R0111,P129,electronics,Not worth the money.,62,23,0.34,4
+R0112,P163,sports,"Excellent product, I loved it!",119,32,0.17,3
+R0113,P149,electronics,Amazing quality and fast shipping.,121,30,0.08,1
+R0114,P140,sports,"Excellent product, I loved it!",193,30,-0.25,3
+R0115,P112,electronics,"Just okay, nothing special.",114,34,-0.09,5
+R0116,P119,sports,Not worth the money.,129,25,0.58,5
+R0117,P106,electronics,"Excellent product, I loved it!",118,29,0.45,5
+R0118,P103,home,"Terrible experience, would not buy again.",84,22,-0.29,3
+R0119,P151,electronics,Amazing quality and fast shipping.,154,27,0.25,4
+R0120,P128,electronics,"Just okay, nothing special.",142,24,0.58,3
+R0121,P195,electronics,"Just okay, nothing special.",143,25,-0.63,3
+R0122,P149,electronics,"Excellent product, I loved it!",92,29,0.47,5
+R0123,P132,fashion,"Terrible experience, would not buy again.",162,19,-0.13,1
+R0124,P141,sports,,77,39,0.49,1
+R0125,P134,electronics,Not worth the money.,137,17,-0.18,3
+R0126,P144,home,"Excellent product, I loved it!",185,16,-0.7,1
+R0127,P194,sports,Not worth the money.,90,33,-0.61,2
+R0128,P189,sports,Not worth the money.,103,30,0.22,4
+R0129,P139,sports,"Excellent product, I loved it!",122,29,0.33,4
+R0130,P171,home,"Terrible experience, would not buy again.",104,29,-0.25,5
+R0131,P129,home,"Terrible experience, would not buy again.",73,24,0.52,5
+R0132,P143,sports,"Terrible experience, would not buy again.",122,18,,3
+R0133,P154,fashion,Amazing quality and fast shipping.,88,25,0.17,3
+R0134,P102,fashion,"Terrible experience, would not buy again.",134,20,-0.41,3
+R0135,P106,fashion,Not worth the money.,92,31,,4
+R0136,P116,sports,Amazing quality and fast shipping.,166,23,0.22,3
+R0137,P163,electronics,Amazing quality and fast shipping.,96,19,-0.23,4
+R0138,P193,home,"Just okay, nothing special.",110,22,0.01,4
+R0139,P188,electronics,"Excellent product, I loved it!",144,27,0.7,4
+R0140,P162,electronics,"Excellent product, I loved it!",83,21,-0.09,4
+R0141,P131,electronics,"Terrible experience, would not buy again.",126,19,0.62,3
+R0142,P178,electronics,"Excellent product, I loved it!",159,26,-0.36,5
+R0143,P146,fashion,"Just okay, nothing special.",71,26,0.46,5
+R0144,P151,sports,Amazing quality and fast shipping.,125,21,0.92,2
+R0145,P185,home,"Just okay, nothing special.",127,21,-1.0,5
+R0146,P115,sports,"Excellent product, I loved it!",143,26,-0.2,4
+R0147,P167,electronics,"Just okay, nothing special.",82,14,0.49,5
+R0148,P171,electronics,Not worth the money.,80,15,0.1,5
+R0149,P111,sports,"Terrible experience, would not buy again.",135,19,0.39,4
+R0150,P180,sports,"Excellent product, I loved it!",128,23,-0.1,1
+R0151,P158,home,"Just okay, nothing special.",127,27,0.24,3
+R0152,P101,electronics,Not worth the money.,130,35,0.12,4
+R0153,P118,fashion,"Just okay, nothing special.",99,31,0.78,4
+R0154,P173,fashion,Amazing quality and fast shipping.,126,23,0.33,3
+R0155,P172,home,"Just okay, nothing special.",128,24,0.37,2
+R0156,P153,fashion,"Just okay, nothing special.",98,17,,5
+R0157,P144,fashion,"Terrible experience, would not buy again.",175,24,-0.04,5
+R0158,P102,electronics,Not worth the money.,134,22,-0.02,4
+R0159,P193,fashion,"Excellent product, I loved it!",84,27,0.4,2
+R0160,P146,fashion,"Just okay, nothing special.",139,19,-0.01,3
+R0161,P104,electronics,"Excellent product, I loved it!",90,28,0.34,1
+R0162,P192,fashion,"Excellent product, I loved it!",143,35,1.0,5
+R0163,P198,electronics,"Terrible experience, would not buy again.",154,24,,2
+R0164,P120,home,"Excellent product, I loved it!",95,27,0.04,4
+R0165,P175,fashion,"Excellent product, I loved it!",148,29,0.8,3
+R0166,P111,home,"Excellent product, I loved it!",132,22,-0.0,4
+R0167,P184,electronics,"Terrible experience, would not buy again.",144,26,-0.82,4
+R0168,P146,electronics,"Terrible experience, would not buy again.",176,25,-0.3,5
+R0169,P138,fashion,"Excellent product, I loved it!",112,25,-0.74,3
+R0170,P103,fashion,"Just okay, nothing special.",97,19,0.02,1
+R0171,P199,home,Not worth the money.,93,25,0.21,2
+R0172,P138,electronics,Not worth the money.,95,28,1.0,5
+R0173,P170,sports,"Excellent product, I loved it!",117,35,0.36,5
+R0174,P130,sports,"Just okay, nothing special.",130,31,0.09,4
+R0175,P163,fashion,,128,40,0.61,4
+R0176,P180,electronics,Not worth the money.,144,19,-0.91,4
+R0177,P181,home,Amazing quality and fast shipping.,120,31,0.32,2
+R0178,P172,home,Not worth the money.,163,26,0.59,5
+R0179,P189,sports,"Just okay, nothing special.",112,40,-0.54,4
+R0180,P194,fashion,"Just okay, nothing special.",201,19,0.77,3
+R0181,P127,fashion,Amazing quality and fast shipping.,138,19,0.37,4
+R0182,P191,sports,Amazing quality and fast shipping.,94,20,-0.01,1
+R0183,P109,home,Amazing quality and fast shipping.,87,10,0.52,2
+R0184,P190,home,Not worth the money.,134,21,1.0,5
+R0185,P145,sports,"Excellent product, I loved it!",113,19,0.29,1
+R0186,P146,sports,"Excellent product, I loved it!",141,26,0.32,4
+R0187,P106,fashion,Amazing quality and fast shipping.,134,27,-0.03,3
+R0188,P157,fashion,Amazing quality and fast shipping.,117,38,-0.22,3
+R0189,P103,electronics,"Terrible experience, would not buy again.",94,31,0.62,3
+R0190,P146,fashion,Not worth the money.,74,20,-0.23,3
+R0191,P101,electronics,"Excellent product, I loved it!",106,18,0.24,5
+R0192,P109,fashion,"Excellent product, I loved it!",145,28,-0.04,3
+R0193,P154,home,Not worth the money.,126,15,0.44,4
+R0194,P135,electronics,Not worth the money.,82,37,0.37,4
+R0195,P126,home,Not worth the money.,125,33,0.72,4
+R0196,P193,electronics,Amazing quality and fast shipping.,131,21,-0.06,5
+R0197,P153,sports,Not worth the money.,93,13,0.07,5
+R0198,P169,sports,"Excellent product, I loved it!",124,34,-0.29,3
+R0199,P156,sports,"Just okay, nothing special.",121,24,-0.02,1
+R0200,P194,home,Not worth the money.,85,33,0.39,3
