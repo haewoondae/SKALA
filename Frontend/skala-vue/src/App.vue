@@ -1,9 +1,8 @@
 <template>
-  <ParentComp></ParentComp>
+  <RouterView> </RouterView>
 </template>
 
-
 <script setup>
-import ParentComp from './components/ParentComp.vue'
+import { RouterView } from 'vue-router'
 
 </script>

@@ -1,0 +1,494 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8080",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/api/stocks": {
+			"put": {
+				"tags": ["stock-controller"],
+				"operationId": "updateStock",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Stock"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": ["stock-controller"],
+				"operationId": "createStock",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Stock"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": ["stock-controller"],
+				"operationId": "deleteStock",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Stock"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players": {
+			"put": {
+				"tags": ["player-controller"],
+				"operationId": "updatePlayer",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Player"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": ["player-controller"],
+				"operationId": "createPlayer",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Player"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": ["player-controller"],
+				"operationId": "deletePlayer",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Player"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players/sell": {
+			"post": {
+				"tags": ["player-controller"],
+				"operationId": "sellPlayerStock",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/StockOrder"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players/login": {
+			"post": {
+				"tags": ["player-controller"],
+				"operationId": "loginPlayer",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PlayerSession"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players/buy": {
+			"post": {
+				"tags": ["player-controller"],
+				"operationId": "buyPlayerStock",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/StockOrder"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/stocks/{id}": {
+			"get": {
+				"tags": ["stock-controller"],
+				"operationId": "getStockById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/stocks/list": {
+			"get": {
+				"tags": ["stock-controller"],
+				"operationId": "getAllStocks",
+				"parameters": [
+					{
+						"name": "offset",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 0
+						}
+					},
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 10
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players/{playerId}": {
+			"get": {
+				"tags": ["player-controller"],
+				"operationId": "getPlayerById",
+				"parameters": [
+					{
+						"name": "playerId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/players/list": {
+			"get": {
+				"tags": ["player-controller"],
+				"operationId": "getAllPlayers",
+				"parameters": [
+					{
+						"name": "offset",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 0
+						}
+					},
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int32",
+							"default": 10
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/Response"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Stock": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"stockName": {
+						"type": "string"
+					},
+					"stockPrice": {
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"Response": {
+				"type": "object",
+				"properties": {
+					"result": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"code": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"message": {
+						"type": "string"
+					},
+					"body": {
+						"type": "object"
+					},
+					"error": {
+						"type": "string",
+						"writeOnly": true,
+						"enum": [
+							"SYSTEM_ERROR",
+							"NOT_AUTHENTICATED",
+							"NOT_AUTHORIZED",
+							"SESSION_NOT_FOUND",
+							"DATA_DUPLICATED",
+							"PARAMETER_MISSED",
+							"DATA_NOT_FOUND",
+							"INVALID_PARAMETER",
+							"INSUFFICIENT_FUNDS",
+							"INSUFFICIENT_QUANTITY",
+							"UNDEFINED_ERROR"
+						]
+					}
+				}
+			},
+			"Player": {
+				"type": "object",
+				"properties": {
+					"playerId": {
+						"type": "string"
+					},
+					"playerPassword": {
+						"type": "string"
+					},
+					"playerMoney": {
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"StockOrder": {
+				"type": "object",
+				"properties": {
+					"playerId": {
+						"type": "string"
+					},
+					"stockId": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"stockQuantity": {
+						"type": "integer",
+						"format": "int32"
+					}
+				}
+			},
+			"PlayerSession": {
+				"type": "object",
+				"properties": {
+					"playerId": {
+						"type": "string"
+					},
+					"playerPassword": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
