@@ -1,0 +1,81 @@
+{
+  "name": "고객 세그먼트 분석",
+  "description": "AI 클러스터링 기반 고객 분류 및 특성 시각화",
+  "parameters": [
+    {
+      "type": "category",
+      "target": [
+        "dimension",
+        [
+          "template-tag",
+          "cluster"
+        ]
+      ],
+      "name": "cluster",
+      "slug": "cluster"
+    }
+  ],
+  "cards": [
+    {
+      "name": "클러스터별 고객 수",
+      "dataset_query": {
+        "database": 1,
+        "native": {
+          "query": "SELECT cluster, COUNT(*) AS customer_count FROM clustered_segments GROUP BY cluster",
+          "template-tags": {}
+        },
+        "type": "native"
+      },
+      "display": "bar",
+      "visualization_settings": {
+        "graph.show_values": true
+      }
+    },
+    {
+      "name": "클러스터별 평균 소득",
+      "dataset_query": {
+        "database": 1,
+        "native": {
+          "query": "SELECT cluster, AVG(annual_income) AS avg_income FROM clustered_segments GROUP BY cluster",
+          "template-tags": {}
+        },
+        "type": "native"
+      },
+      "display": "pie",
+      "visualization_settings": {}
+    },
+    {
+      "name": "클러스터 평균 특성 요약",
+      "dataset_query": {
+        "database": 1,
+        "native": {
+          "query": "\nSELECT cluster,\n       ROUND(AVG(age), 1) AS avg_age,\n       ROUND(AVG(annual_income)) AS avg_income,\n       ROUND(AVG(spending_score), 1) AS avg_score,\n       ROUND(AVG(visits_per_month), 1) AS avg_visits\nFROM clustered_segments\nGROUP BY cluster\nORDER BY cluster\n",
+          "template-tags": {}
+        },
+        "type": "native"
+      },
+      "display": "table",
+      "visualization_settings": {}
+    },
+    {
+      "name": "PCA 시각화 (클러스터)",
+      "dataset_query": {
+        "database": 1,
+        "native": {
+          "query": "\nSELECT pca_x, pca_y, cluster\nFROM clustered_segments\n",
+          "template-tags": {}
+        },
+        "type": "native"
+      },
+      "display": "scatter",
+      "visualization_settings": {
+        "graph.dimensions": {
+          "x": "pca_x",
+          "y": "pca_y"
+        },
+        "graph.metrics": [],
+        "graph.color_by": "cluster"
+      }
+    }
+  ]
+}
