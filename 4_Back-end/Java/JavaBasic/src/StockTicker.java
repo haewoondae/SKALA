@@ -12,6 +12,10 @@ class Stock {
         this.dividendPreference = dividendPreference;
     }
 
+    public Stock(String name2, int price2, int i) {
+        //TODO Auto-generated constructor stub
+    }
+
     // Getter & Setter
     public String getName() {
         return name;
@@ -39,6 +43,16 @@ class Stock {
                 name, price,
                 votingRight ? "있음" : "없음",
                 dividendPreference ? "있음" : "없음");
+    }
+
+    public int getQuantity() {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'getQuantity'");
+    }
+
+    public void setQuantity(int newQuantity) {
+      // TODO Auto-generated method stub
+      throw new UnsupportedOperationException("Unimplemented method 'setQuantity'");
     }
 }
 
