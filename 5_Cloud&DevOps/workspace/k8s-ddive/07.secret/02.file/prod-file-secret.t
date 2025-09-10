@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: prod-file-secret
+data:
+  config.json: ewogICAgICBkYXRhYmFzZS51cmw6IGpkYmM6bXlzcWw6Ly9sb2NhbGhvc3Q6MzMwNi9wcm9kdWN0aW9uLWRiLAogICAgICBkYXRhYmFzZS51c2VyOiBwcm9kdWN0b3IsCiAgICAgIGRhdGFiYXNlLnBhc3N3b3JkOiBwcm9kdWN0b3IKICAgIH0=
+
+

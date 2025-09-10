@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sk003-pod-test
+  namespace: skala-practice
+  labels:
+    app: sk003-pod-test
+spec:
+  serviceAccountName: default
+  containers:
+  - name: nginx
+    image:  nginx:mainline-alpine
+    imagePullPolicy: Always
+    env:
+    - name: USER_NAME
+      value: sk003

@@ -1,0 +1,242 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/priority: "1000"
+  name: frontend-test-ingress
+  namespace: skala-practice
+spec:
+  ingressClassName: public-nginx
+  rules:
+  - host: frontend.skala25a.project.skala-ai.com
+    http:
+      paths:
+      - path: /himang10
+        pathType: Prefix
+        backend:
+          service:
+            name: himang10-posts-get-service
+            port:
+              number: 8080
+      - path: /sk000
+        pathType: Prefix
+        backend:
+          service:
+            name: sk000-posts-get
+            port:
+              number: 8080
+      - path: /sk091
+        pathType: Prefix
+        backend:
+          service:
+            name: sk091-posts-get
+            port:
+              number: 8080
+      - path: /sk092
+        pathType: Prefix
+        backend:
+          service:
+            name: sk092-posts-get
+            port:
+              number: 8080
+      - path: /sk093
+        pathType: Prefix
+        backend:
+          service:
+            name: sk093-posts-get
+            port:
+              number: 8080
+      - path: /sk094
+        pathType: Prefix
+        backend:
+          service:
+            name: sk094-posts-get
+            port:
+              number: 8080
+      - path: /sk095
+        pathType: Prefix
+        backend:
+          service:
+            name: sk095-posts-get
+            port:
+              number: 8080
+      - path: /sk096
+        pathType: Prefix
+        backend:
+          service:
+            name: sk096-posts-get
+            port:
+              number: 8080
+      - path: /sk097
+        pathType: Prefix
+        backend:
+          service:
+            name: sk097-posts-get
+            port:
+              number: 8080
+      - path: /sk098
+        pathType: Prefix
+        backend:
+          service:
+            name: sk098-posts-get
+            port:
+              number: 8080
+      - path: /sk099
+        pathType: Prefix
+        backend:
+          service:
+            name: sk099-posts-get
+            port:
+              number: 8080
+      - path: /sk100
+        pathType: Prefix
+        backend:
+          service:
+            name: sk100-posts-get
+            port:
+              number: 8080
+      - path: /sk101
+        pathType: Prefix
+        backend:
+          service:
+            name: sk101-posts-get
+            port:
+              number: 8080
+      - path: /sk102
+        pathType: Prefix
+        backend:
+          service:
+            name: sk102-posts-get
+            port:
+              number: 8080
+      - path: /sk103
+        pathType: Prefix
+        backend:
+          service:
+            name: sk103-posts-get
+            port:
+              number: 8080
+      - path: /sk104
+        pathType: Prefix
+        backend:
+          service:
+            name: sk104-posts-get
+            port:
+              number: 8080
+      - path: /sk105
+        pathType: Prefix
+        backend:
+          service:
+            name: sk105-posts-get
+            port:
+              number: 8080
+      - path: /sk106
+        pathType: Prefix
+        backend:
+          service:
+            name: sk106-posts-get
+            port:
+              number: 8080
+      - path: /sk107
+        pathType: Prefix
+        backend:
+          service:
+            name: sk107-posts-get
+            port:
+              number: 8080
+      - path: /sk108
+        pathType: Prefix
+        backend:
+          service:
+            name: sk108-posts-get
+            port:
+              number: 8080
+      - path: /sk109
+        pathType: Prefix
+        backend:
+          service:
+            name: sk109-posts-get
+            port:
+              number: 8080
+      - path: /sk110
+        pathType: Prefix
+        backend:
+          service:
+            name: sk110-posts-get
+            port:
+              number: 8080
+      - path: /sk111
+        pathType: Prefix
+        backend:
+          service:
+            name: sk111-posts-get
+            port:
+              number: 8080
+      - path: /sk112
+        pathType: Prefix
+        backend:
+          service:
+            name: sk112-posts-get
+            port:
+              number: 8080
+      - path: /sk113
+        pathType: Prefix
+        backend:
+          service:
+            name: sk113-posts-get
+            port:
+              number: 8080
+      - path: /sk114
+        pathType: Prefix
+        backend:
+          service:
+            name: sk114-posts-get
+            port:
+              number: 8080
+      - path: /sk115
+        pathType: Prefix
+        backend:
+          service:
+            name: sk115-posts-get
+            port:
+              number: 8080
+      - path: /sk116
+        pathType: Prefix
+        backend:
+          service:
+            name: sk116-posts-get
+            port:
+              number: 8080
+      - path: /sk117
+        pathType: Prefix
+        backend:
+          service:
+            name: sk117-posts-get
+            port:
+              number: 8080
+      - path: /sk118
+        pathType: Prefix
+        backend:
+          service:
+            name: sk118-posts-get
+            port:
+              number: 8080
+      - path: /sk119
+        pathType: Prefix
+        backend:
+          service:
+            name: sk119-posts-get
+            port:
+              number: 8080
+      - path: /sk120
+        pathType: Prefix
+        backend:
+          service:
+            name: sk120-posts-get
+            port:
+              number: 8080
+  tls:
+  - hosts:
+    - frontend.skala25a.project.skala-ai.com
+    secretName: frontend-tls-secret

@@ -1,0 +1,20 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    amdp.io/app: skala25a-stock-api-wamdp
+    amdp.io/profile: skala.skala-a
+    argocd.argoproj.io/instance: skala25a-stock-api-wamdp.skala-a.skala
+    cluster-tier: dev
+  name: skala25a-stock-api-wamdp-pod-reader-skala-a
+  namespace: skala-practice
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - configmaps
+  verbs:
+  - get
+  - watch
+  - list

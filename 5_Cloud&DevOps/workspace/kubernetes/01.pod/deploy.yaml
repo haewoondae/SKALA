@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk003-deploy-test
+  namespace: skala-practice
+  labels:
+    app: sk003-deploy-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sk003-deploy-test
+  template:
+    metadata:
+      labels:
+        app: sk003-deploy-test
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: nginx
+          image: nginx:mainline-alpine
+          imagePullPolicy: Always
+          env:
+            - name: USER_NAME
+              value: sk003
+

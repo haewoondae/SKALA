@@ -249,6 +249,18 @@ public class PlayerService {
             playerStockRepository.save(newPlayerStock);
         }
         
+        // 🔥 추가: 거래 내역 기록 생성
+        Transaction transaction = new Transaction(
+            player,
+            stock,
+            "BUY",
+            order.getQuantity(),
+            stock.getStockPrice(),
+            totalCost,
+            LocalDateTime.now()
+        );
+        transactionRepository.save(transaction);
+        
         // 요청 처리 결과 Response로 성공 응답
         return Response.success("주식 매수가 완료되었습니다.");
     }
@@ -299,6 +311,18 @@ public class PlayerService {
         double saleAmount = stock.getStockPrice() * order.getQuantity();
         player.setPlayerMoney(player.getPlayerMoney() + saleAmount);
         playerRepository.save(player);
+        
+        // 🔥 추가: 거래 내역 기록 생성
+        Transaction transaction = new Transaction(
+            player,
+            stock,
+            "SELL",
+            order.getQuantity(),
+            stock.getStockPrice(),
+            saleAmount,
+            LocalDateTime.now()
+        );
+        transactionRepository.save(transaction);
         
         // 요청 처리 결과 Response로 성공 응답
         return Response.success("주식 매도가 완료되었습니다.");

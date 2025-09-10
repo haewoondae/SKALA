@@ -1,33 +1,14 @@
-# ---------- build backend (Maven) ----------
+# 베이스 이미지로 OpenJDK 17 버전의 JRE 이미지 사용
 FROM openjdk:17-jdk-slim
+# 작업 디렉토리 설정
 WORKDIR /app
-COPY . .
-# mvnw가 있으면 mvnw, 없으면 mvn 사용
-RUN if [ -f ./mvnw ]; then chmod +x ./mvnw && ./mvnw -q -DskipTests clean package; else mvn -q -DskipTests clean package; fi
-
-# ---------- run: Java + Streamlit ----------
-FROM python:3.11-slim
-RUN apt-get update && apt-get install -y --no-install-recommends openjdk-21-jre-headless ca-certificates curl && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /app
-
-# Maven 산출물 복사 (target/*.jar → app.jar)
-COPY --from=build /app/target/*.jar /app/app.jar
-
-# Streamlit 프론트
-COPY src/main/resources/static/app.py /app/app.py
-COPY src/main/resources/static/requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
-
-# 환경 변수
-ENV TZ=Asia/Seoul
-ENV BACKEND_BASE_URL=http://127.0.0.1:9080
-ENV STREAMLIT_SERVER_HEADLESS=true
-ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
-ENV STREAMLIT_SERVER_PORT=8501
-ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
-
-EXPOSE 9080 8501
-
-# 두 프로세스 동시 실행
-CMD java -jar /app/app.jar --server.port=9080 & streamlit run /app/app.py --server.port=8501 --server.address=0.0.0.0 && wait
+# 외부에서 컨테이너의 8080 포트에 접근할 수 있도록 설정
+EXPOSE 8080
+EXPOSE 8081
+# 외부에서 받아들일 변수 선언
+#ARG JAR_FILE
+# 애플리케이션의 jar 파일을 컨테이너에 추가
+#ADD ${JAR_FILE} app.jar
+ADD ./target/skala-stock-api-0.0.1-SNAPSHOT.jar app.jar
+# 애플리케이션 실행
+ENTRYPOINT ["java","-jar","app.jar"]

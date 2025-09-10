@@ -1,0 +1,14 @@
+spring:
+  redis:
+    host: ac55000eca8b749a6b916f7a04c4c1c2-9f9c8ea7fa9b0e7a.elb.ap-northeast-2.amazonaws.com
+    port: 6379
+    username: default
+    password: 'Skala25a!23$'   # 특수문자가 있으므로 작은따옴표
+    database: 0
+    timeout: 2000m # 2초
+    protocol-version: 3 # redis 프로토콜 버전 3
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1

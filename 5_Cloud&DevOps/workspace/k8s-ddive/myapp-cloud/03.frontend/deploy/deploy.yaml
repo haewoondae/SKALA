@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk000-posts-get
+  namespace: skala-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sk000-posts-get
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8080'
+        prometheus.io/path: '/prometheus'
+        update: update1000
+      labels:
+        app: sk000-posts-get
+    spec:
+      containers:
+      - name: sk000-posts-get
+        image: amdp-registry.skala-ai.com/skala25a/sk000-posts-get.amd64:1.0
+        imagePullPolicy: Always

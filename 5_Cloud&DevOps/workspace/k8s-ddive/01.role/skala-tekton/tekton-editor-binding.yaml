@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: tekton-editor-binding
+  namespace: skala-tekton
+subjects:
+- kind: ServiceAccount
+  name: skala-admin-sa
+  namespace: skala-practice
+roleRef:
+  kind: Role
+  name: tekton-editor
+  apiGroup: rbac.authorization.k8s.io

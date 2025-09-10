@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk000-volume-test
+  namespace: skala-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sk000-volume-test
+  template:
+    metadata:
+      annotations:
+        update: ae772301f42ce60fdada123e160ae6e3
+      labels:
+        app: sk000-volume-test
+    spec:
+      serviceAccountName: default
+      containers:
+      - name: storage-test
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command: ["/bin/sh", "-c"]
+        args:
+          - echo "Hello from busybox" > /data/hello.txt && sleep infinity
+        volumeMounts:
+        - name: hostpath-volume
+          mountPath: /data
+      volumes:
+      - name: hostpath-volume
+        hostPath:
+          path: /tmp/hostpath-sk000-volume-test
+          type: DirectoryOrCreate

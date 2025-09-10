@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk003-myfirst-api-server
+  namespace: skala-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sk003-myfirst-api-server
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/actuator/prometheus"
+        update: 54c0775a
+      labels:
+        app: sk003-myfirst-api-server
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: myfirst-api-server
+          image: amdp-registry.skala-ai.com/skala25a/sk003-myfirst-api-server@sha256:02d4366d24bebd8bba770a9c255a470e8f41db18a97cb18efe
+          imagePullPolicy: Always
+          env:
+            - name: USER_NAME
+              value: sk003
+            - name: NAMESPACE
+              value: skala-practice
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
