@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-  name: dev-file-secret
-data:
-  config.json: ewogICJkYXRhYmFzZS51cmwiOiAiamRiYzpteXNxbDovL2xvY2FsaG9zdDozMzA2L2RldmVsb3AtZGIiLAogICJkYXRhYmFzZS51c2VyIjogImRldmVsb3BlciIsCiAgImRhdGFiYXNlLnBhc3N3b3JkIjogImRldmVsb3BlciIKfQ==
-
