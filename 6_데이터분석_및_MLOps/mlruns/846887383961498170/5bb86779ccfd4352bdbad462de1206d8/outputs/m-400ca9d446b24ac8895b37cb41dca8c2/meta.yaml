@@ -1,0 +1,6 @@
+destination_id: m-400ca9d446b24ac8895b37cb41dca8c2
+destination_type: MODEL_OUTPUT
+source_id: m-400ca9d446b24ac8895b37cb41dca8c2
+source_type: RUN_OUTPUT
+step: 0
+tags: {}

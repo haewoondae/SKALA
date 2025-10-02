@@ -1,0 +1,10 @@
+artifact_location: file:///Users/ichangmin/MyDrive/SKALA/SKALA/6_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8_%E1%84%86%E1%85%B5%E1%86%BE_MLOps/mlruns/469374875629073935/models/m-3e839b4e7ae14453b005b5f5bf64cd72/artifacts
+creation_timestamp: 1759412836997
+experiment_id: '469374875629073935'
+last_updated_timestamp: 1759412838481
+model_id: m-3e839b4e7ae14453b005b5f5bf64cd72
+model_type: null
+name: model
+source_run_id: 8381fbd78b1e47e89b47dd9145f6dc97
+status: 2
+status_message: null

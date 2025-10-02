@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/ichangmin/MyDrive/SKALA/SKALA/6_%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5%E1%84%87%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5%E1%86%A8_%E1%84%86%E1%85%B5%E1%86%BE_MLOps/mlruns/846887383961498170/5bb86779ccfd4352bdbad462de1206d8/artifacts
+end_time: 1759412836904
+entry_point_name: ''
+experiment_id: '846887383961498170'
+lifecycle_stage: active
+run_id: 5bb86779ccfd4352bdbad462de1206d8
+run_name: big-lynx-259
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759412833169
+status: 3
+tags: []
+user_id: ichangmin
