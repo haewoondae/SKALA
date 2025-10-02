@@ -1,0 +1,6 @@
+# Ignore all .env files
+**/.env
+
+# Ignore macOS folder attributes
+.DS_Store
+**/.DS_Store
